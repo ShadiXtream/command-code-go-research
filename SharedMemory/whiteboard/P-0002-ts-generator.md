@@ -67,4 +67,15 @@ P-0001 is a separate approved proposal and is not part of this scope.
 
 ## Implementation
 
-Not started.
+Implemented in commit `cf9be92` on `agent/commandcode/P-0002`, based on the implemented `agent/commandcode/P-0001`.
+
+Changed:
+- `Models Benchmark/data/model-benchmarks.csv`: 56-column normalized schema, 7 golden sample rows.
+- `tools/build-models.ts`: renderer, `--check`/`--write`, protected-status guard, golden comparison.
+- `tools/validate-models.ts`: structural validator.
+- `tools/build-models.test.ts`: golden sample and overwrite-guard tests.
+- `package.json`, `tsconfig.json`, `package-lock.json`: strict TypeScript toolchain, zero runtime dependencies; `node_modules/` ignored.
+- `Models Benchmark/plan.md`: Phase 3 DAG updated to P3.1–P3.5; P3.1 marked done.
+- `Models Benchmark/README.md`: tooling and status updated.
+
+Verified: `npm run typecheck`, `npm run test:models`, `npm run validate:models`, and `npm run check:models` pass; `npm run build:models` writes 0 and skips 7 protected samples.
