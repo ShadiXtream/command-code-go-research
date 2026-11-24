@@ -40,7 +40,7 @@ default_effort: "max"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $6 |
+| Go monthly allowance (shared $10 pool) | $6 |
 | Input $/1M | $0.10 |
 | Output $/1M | $0.50 |
 | Cache read $/1M | $0.004 |
@@ -51,6 +51,8 @@ default_effort: "max"
 | Plan gate | Go |
 
 **Cost sanity check:** a typical request (800 fresh input + 50K cache read + 150 output) costs ≈ **$0.00036**, consistent with the Go page’s ≈$0.00038/request estimate at $6/15,800.
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 **Notes:** This is one of the cheapest per-request models on Go. Its input and cache-read prices are extremely low, which makes it ideal for repeated context-heavy agent loops.
 

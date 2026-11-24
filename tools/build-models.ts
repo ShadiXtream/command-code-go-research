@@ -273,7 +273,7 @@ function economicsSection(record: ModelRecord): string {
     "",
     "| Field | Value |",
     "|---|---:|",
-    `| Go monthly credits | $${display(field(g, "go_credits"), "0")} |`,
+    `| Go monthly allowance (shared $10 pool) | $${display(field(g, "go_credits"), "0")} |`,
     `| Input $/1M | ${display(inPrice)} |`,
     `| Output $/1M | ${display(outPrice)} |`,
     `| Cache read $/1M | ${display(cacheRead)} |`,
@@ -288,6 +288,8 @@ function economicsSection(record: ModelRecord): string {
     cacheWriteCost !== undefined
       ? `\n**Cache-write sensitivity:** 50K × $${cacheWrite}/1M = **$${cacheWriteCost.toFixed(4)}** for the first write; amortized over N turns = $${cacheWriteCost.toFixed(4)}/N. The Go request estimate above is a cache-hit steady state.`
       : "",
+    "",
+    "**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.",
   ].join("\n");
 }
 

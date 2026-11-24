@@ -40,7 +40,7 @@ default_effort: "unknown"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $6 |
+| Go monthly allowance (shared $10 pool) | $6 |
 | Input $/1M | $0.834 |
 | Output $/1M | $2.501 |
 | Cache read $/1M | $0.042 |
@@ -51,6 +51,8 @@ default_effort: "unknown"
 | Plan gate | Go |
 
 **Cost sanity check:** a typical request (800 fresh input + 50K cache read + 150 output) costs ≈ **$0.0031**, consistent with the Go page’s ≈$0.0033/request estimate at $6/1,840.
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 **Notes:** Cheaper per request than Kimi, Qwen, or GLM, but it generates far more tokens. The Go estimate already accounts for typical output; unusually long reasoning traces will burn credits faster.
 

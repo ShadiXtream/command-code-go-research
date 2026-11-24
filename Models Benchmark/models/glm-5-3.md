@@ -40,7 +40,7 @@ default_effort: "max"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $10 |
+| Go monthly allowance (shared $10 pool) | $10 |
 | Input $/1M | $1.40 |
 | Output $/1M | $4.40 |
 | Cache read $/1M | $0.26 |
@@ -51,6 +51,8 @@ default_effort: "max"
 | Plan gate | Go |
 
 **Cost sanity check:** a typical request (800 fresh input + 50K cache read + 150 output) costs ≈ **$0.0148**, consistent with the Go page’s ≈$0.0148/request estimate at $10/677.
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 **Notes:** The $10 allowance is the full Go pool, so heavy GLM-5.3 use leaves nothing for other models. The cheap cache-read price ($0.26) still dominates the request cost.
 

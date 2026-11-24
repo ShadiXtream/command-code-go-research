@@ -40,7 +40,7 @@ default_effort: "unknown"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $6 |
+| Go monthly allowance (shared $10 pool) | $6 |
 | Input $/1M | 0.07 |
 | Output $/1M | 0.281 |
 | Cache read $/1M | 0.003 |
@@ -53,6 +53,8 @@ default_effort: "unknown"
 
 **Cost sanity check:** a typical request (800 fresh input + 50K cache read + 150 output) costs ≈ **$0.0002**.
 
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 ## 3. Headline metrics (Artificial Analysis)
 
