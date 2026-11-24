@@ -81,7 +81,7 @@ default_effort: "high"
 | LiveBench — overall (reported only) | 2026-06-25 | 71.6* | % | 0813 variant | BenchLM mirror | 2026-06-25 | value (reported overall) |
 | LiveBench — reasoning | 2026-06-25 | 88.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — coding | 2026-06-25 | 63.8 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
-| LiveBench — math | 2026-06-25 | 95.5 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — math | 2026-06-25 | 95.4 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — data analysis | 2026-06-25 | 70.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — language | 2026-06-25 | 75.5 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — instruction following | 2026-06-25 | 84.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
@@ -147,3 +147,4 @@ No reliable vendor benchmark rows were extracted for V4 Pro. Vendor and third-pa
 | Date | Change | Reason |
 |---|---|---|
 | 2026-11-24 | Initial sample file | Human-review batch |
+| 2026-11-24 | Corrected LiveBench math from 95.5 to 95.4 | Exact CSV average of AMPS_Hard, math_comp, olympiad = 95.4483 |
