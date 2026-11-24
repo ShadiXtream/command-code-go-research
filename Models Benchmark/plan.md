@@ -333,9 +333,9 @@ This is the “quick sweep” result: which Go models to use for each task type 
 | P2.5 Self-check | **Done** | See each file’s provenance section |
 | **P2.6 Human review** | **Done (methodology)** | P-0001/P-0002 approved; sample files remain protected |
 | P3.1 Schema + generator/validator | **Done** | `model-benchmarks.csv`, `tools/build-models.ts`, `tools/validate-models.ts`, golden test |
-| P3.2 Populate normalized data | **In progress (40/55)** | Batches A+B+C drafts generated; 15 models queued |
-| P3.3 Generate remaining files | **In progress (40/55)** | 40 draft files written; 15 queued |
-| P3.4 Human spot-check | **Pending** | 10% + conflicts |
+| P3.2 Populate normalized data | **Done (55/55)** | All four batches populated; 62 rows total |
+| P3.3 Generate remaining files | **Done (55/55)** | 55 draft files written; 7 protected samples |
+| P3.4 Human spot-check | **Next** | 10% + conflicts |
 | P3.5 Final QA + index | **Pending** | Coverage audit, dataset lock |
 | P4 Phase 2 | **Not started** | — |
 
@@ -379,34 +379,34 @@ Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBenc
 | 32 | `Qwen/Qwen3.7-Flash` | ? | — | — | — | — | Draft |
 | 33 | `Qwen/Qwen3.6-Max-Preview` | ? | — | — | 1,468 | — | Draft |
 | 34 | `Qwen/Qwen3.6-Plus` | ? | — | 68.9 | — | — | Draft |
-| 35 | `tencent/hy3-paid` | ? | — | — | — | — | Queued |
+| 35 | `tencent/hy3-paid` | ? | — | — | — | — | Draft |
 | 36 | `tencent/hy4` | 35 | 37.9 | — | — | — | **Sample** |
 | 37 | `tencent/hy4-flash` | ? | 11.8 | — | — | — | Draft |
 | 38 | `tencent/hy4-preview` | ? | 19.1 | — | — | — | Draft |
 | 39 | `xiaomi/mimo-v2.6-pro` | ? | 27.0 | — | 1,481 | — | Draft |
 | 40 | `xiaomi/mimo-v2.6-flash` | ? | 16.1 | — | 1,448 | — | Draft |
-| 41 | `stepfun/Step-5-Preview` | ? | — | — | — | — | Queued |
+| 41 | `stepfun/Step-5-Preview` | ? | — | — | — | — | Draft |
 | 42 | `stepfun/Step-3.7-Flash` | ? | — | — | — | — | Draft |
 | 43 | `stepfun/Step-3.5-Flash` | ? | — | — | — | — | Draft |
 | 44 | `meta/muse-ember` | 36 | 30.6 | — | — | — | **Sample** |
-| 45 | `meta/muse-spark-1.3-contributor` | ? | — | — | — | — | Queued |
-| 46 | `meta/muse-spark-1.2-contributor` | ? | — | — | — | — | Queued |
-| 47 | `meta/muse-spark-open` | ? | — | — | — | — | Queued |
-| 48 | `thinkingmachines/inkling-2-mini` | 20 | — | — | — | — | Queued |
-| 49 | `thinkingmachines/inkling` | ? | — | 71.9 | — | — | Queued |
-| 50 | `thinkingmachines/inkling-small` | ? | 0.9 | — | — | — | Queued |
+| 45 | `meta/muse-spark-1.3-contributor` | ? | — | — | — | — | Draft |
+| 46 | `meta/muse-spark-1.2-contributor` | ? | — | — | — | — | Draft |
+| 47 | `meta/muse-spark-open` | ? | — | — | — | — | Draft |
+| 48 | `thinkingmachines/inkling-2-mini` | 20 | — | — | — | — | Draft |
+| 49 | `thinkingmachines/inkling` | ? | — | 71.9 | — | — | Draft |
+| 50 | `thinkingmachines/inkling-small` | ? | 0.9 | — | — | — | Draft |
 | 51 | `meituan/LongCat-2.0` | ? | — | — | — | — | Draft |
-| 52 | `ornith/ornith-1.5-122b` | ? | — | — | — | — | Queued |
-| 53 | `nvidia/nemotron-3-ultra-550b-a55b` | ? | — | 67.4 | — | — | Queued |
-| 54 | `nvidia/nemotron-3.5-super-vl` | ? | 0.3 | — | — | — | Queued |
-| 55 | `mistral/mistral-large-4` | ? | 27.6 | 71.8 | — | — | Queued |
+| 52 | `ornith/ornith-1.5-122b` | ? | — | — | — | — | Draft |
+| 53 | `nvidia/nemotron-3-ultra-550b-a55b` | ? | — | 67.4 | — | — | Draft |
+| 54 | `nvidia/nemotron-3.5-super-vl` | ? | 0.3 | — | — | — | Draft |
+| 55 | `mistral/mistral-large-4` | ? | 27.6 | 71.8 | — | — | Draft |
 | 56 | `inclusionai/ling-3.1-flash` | ? | — | — | — | — | Draft |
 | 57 | `inclusionai/ling-3.1-flash-1019` | ? | — | — | — | — | Draft |
 | 58 | `xai/grok-4.5` | ? | 12.4 | 75.8 | — | — | Draft |
-| 59 | `gpt-5.6-luna` | 24 | 17.6 | 73.6 | — | — | Queued |
+| 59 | `gpt-5.6-luna` | 24 | 17.6 | 73.6 | — | — | Draft |
 | 60 | `gpt-6-luna` | 28 | 15.2 | 72.0* | — | — | **Sample** |
-| 61 | `recursive/flint-v1.0:free` | — | — | — | — | — | Queued |
-| 62 | `stealth/glyph-cluster:free` | — | — | — | — | — | Queued |
+| 61 | `recursive/flint-v1.0:free` | — | — | — | — | — | Draft |
+| 62 | `stealth/glyph-cluster:free` | — | — | — | — | — | Draft |
 
 `*` LiveBench reported overall is a mirror of the official leaderboard; the official CSV exposes task/category data, not a single overall number. See `sources.md`.
 
