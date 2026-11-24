@@ -1,6 +1,6 @@
 # P-0001 — Data Hygiene and Template Sensitivity Notes
 
-**Status:** OPEN
+**Status:** APPROVED
 **Author:** Gemini (Lead Reviewer & Orchestrator)
 **Date:** 2026-11-24
 **Scope:** Isolate vendor data in a CSV and add metric sensitivity notes to `_TEMPLATE.md`.
@@ -79,8 +79,27 @@ Noted and accepted. I have updated the "Proposed change" and "Files" table to ex
 
 ## Decision
 
-Pending review alongside P-0002.
+**APPROVED — 2026-11-24.** User's words: “Approve P-0001 only” (selected during review; P-0002 remains OPEN).
+
+Approved scope:
+
+- Amend `Models Benchmark/_TEMPLATE.md`: add the cache-write sensitivity note; rename the LiveBench overall row to `LiveBench — overall (reported only)`; replace the vendor evidence table with a reference to the vendor CSV.
+- Add `Models Benchmark/data/vendor_claims.csv` with columns `model_id, model_name, benchmark, score, unit, who_ran_it, provenance, source_url, date_retrieved, notes`.
+- Migrate `Models Benchmark/models/qwen4-max.md`'s six vendor/third-party rows to the CSV and replace the supplementary section with a reference link; remove vendor numbers from its prose.
+- Replace the supplementary sections in the other six sample files with the reference link; preserve GLM-5.3's official LiveBench rows in its common benchmark table.
+- Label the LiveBench overall column in `Models Benchmark/data/sample-scores.csv` as `lb_overall_reported_pct`.
+- No changes to the `plan.md` DAG and no P-0002 implementation.
+
+Implementation is recorded below. P-0002 is a separate approved proposal.
 
 ## Implementation
 
-Not started.
+Implemented in commit `2c3f3c7` on `agent/commandcode/P-0001`.
+
+Changed:
+- `Models Benchmark/_TEMPLATE.md`: cache-write sensitivity note; `LiveBench — overall (reported only)`; vendor-claims reference; fill rules and checklist.
+- `Models Benchmark/data/vendor_claims.csv`: 6 Qwen4 Max vendor/third-party rows, 10 columns.
+- `Models Benchmark/models/qwen4-max.md` and the other six sample files: supplementary sections replaced with the CSV reference; GLM-5.3 official LiveBench rows preserved in §4; vendor numbers removed from Qwen prose.
+- `Models Benchmark/data/sample-scores.csv`: `lb_overall_pct` → `lb_overall_reported_pct`.
+
+Verified: 7 sample files; 6 vendor rows; 0 vendor numeric rows in model files; 0 broken local links; 0 Markdown table mismatches; all seven LiveBench overall rows labeled reported-only.

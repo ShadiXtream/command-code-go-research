@@ -77,7 +77,7 @@ default_effort: "max"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 32 | 0–100 | max | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | **41.2** ±3.3 | % resolved | Claude Code; max | TB official | 2026-08-14 | value (rank 20) |
-| LiveBench — overall | 2026-06-25 | 76.1* | % | not stated | BenchLM mirror | 2026-06-25 | value (reported overall) |
+| LiveBench — overall (reported only) | 2026-06-25 | 76.1* | % | not stated | BenchLM mirror | 2026-06-25 | value (reported overall) |
 | LiveBench — reasoning | 2026-06-25 | 79.2 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — coding | 2026-06-25 | 68.1 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — math | 2026-06-25 | 94.2 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
@@ -89,14 +89,10 @@ default_effort: "max"
 
 `*` Reported overall is a BenchLM mirror of LiveBench. A 6-category mean derived from the official CSV is ≈78.7, because the official CSV does not include the agentic-coding category and the mirror may use a different aggregation. The category scores are the reliable part; do not treat 76.1 and 78.7 as a model change.
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-| Benchmark | Score | Who ran it | Notes | Source |
-|---|---:|---|---|---|
-| LiveBench coding category | 68.1 | Official CSV, derived | Code completion/generation, JavaScript, Python, TypeScript | https://livebench.ai/v1/table_2026_06_25.csv |
-| LiveBench instruction following | 88.5 | Official CSV, derived | `theory_of_mind` task | Same |
-
-No vendor coding table was extracted; the Terminal-Bench and LiveBench rows are the independent evidence.
+No vendor benchmark rows were extracted for GLM-5.3. Its LiveBench category scores are official and appear in §4; they are not vendor claims and are not in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv).
 
 ## 5. Capability profile
 

@@ -76,7 +76,7 @@ default_effort: "max"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 46 | 0–100 | max | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | **59.7** ±4.2 | % resolved | Claude Code; max | TB official | 2026-10-24 | value (rank 11) |
-| LiveBench — overall | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE (no K3.1 Pro row) |
+| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE (no K3.1 Pro row) |
 | LiveBench — reasoning | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
 | LiveBench — coding | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
 | LiveBench — math | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
@@ -86,9 +86,12 @@ default_effort: "max"
 | LMArena Text | 2026-11-22 | — | Elo | — | Arena | 2026-11-22 | NM (not in captured top/Pareto) |
 | SWE-bench Verified | 2026-11-24 | — | % resolved | — | SWE-bench | 2026-11-24 | NE (not on Verified board) |
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-No vendor benchmark rows were extracted for K3.1 Pro in this sample. The Terminal-Bench result is the independent anchor.
+No vendor benchmark rows were extracted for K3.1 Pro. If any are added, they belong in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv), not in this file.
+
+### Benchmark context
 
 **Terminal-Bench context:** 59.7% is rank 11 of 54 rows on the 4.1 board, below GPT-6 Astra (60.3%) and above Fable 5.1 (57.6%). It is the best **Go-plan** model on the captured board. Qwen 4 Max is not on the board, so this is not a complete Go ranking.
 

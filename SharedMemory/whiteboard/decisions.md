@@ -10,4 +10,5 @@ grep -l "^\*\*Status:\*\* OPEN" SharedMemory/whiteboard/P-*.md
 
 | ID | Date | Title | Decision | Decided by | Notes |
 |---|---|---|---|---|---|
+| D-0002 | 2026-11-24 | P-0001 — Data hygiene and template sensitivity notes | APPROVED | Shadi (user) | User selected “Approve P-0001 only”; P-0002 remains OPEN. |
 | D-0001 | 2026-11-24 | Create `SharedMemory/whiteboard` and the approval gate | APPROVED | Shadi (user) | Requested at project setup: agents must brief, request, or debate here until the user and the main agent accept. |
