@@ -1,4 +1,4 @@
-model,cc_id,aa_index,aa_cost_task_usd,aa_time_task_min,aa_ttft_s,aa_speed_tok_s,tb_4_1_pct,lb_overall_pct,lb_reasoning,lb_coding,lb_math,lb_data_analysis,lb_language,lb_if,arena_elo,swe_verified_pct,flags
+model,cc_id,aa_index,aa_cost_task_usd,aa_time_task_min,aa_ttft_s,aa_speed_tok_s,tb_4_1_pct,lb_overall_reported_pct,lb_reasoning,lb_coding,lb_math,lb_data_analysis,lb_language,lb_if,arena_elo,swe_verified_pct,flags
 Qwen 4 Max,Qwen/Qwen4-Max,43,3.27,24.5,89.49,72,,,,,,,,,,,"TB NE; LB STALE; Arena NM; SWE NE"
 Kimi K3.1 Pro,moonshotai/Kimi-K3.1-Pro,46,3.68,35.7,140.23,34,59.7,,,,,,,,,,"LB NE (K3 row is different); Arena NM; SWE NE"
 Tencent Hy4,tencent/hy4,35,1.03,13.8,99.30,94,37.9,,,,,,,,,,"LB NE; Arena NM; SWE NE; AA effort not stated"

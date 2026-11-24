@@ -1,0 +1,7 @@
+model_id,model_name,benchmark,score,unit,who_ran_it,provenance,source_url,date_retrieved,notes
+Qwen/Qwen4-Max,Qwen 4 Max,DeepSWE,75.7,%,Alibaba,VENDOR,https://qwen.ai/blog?id=qwen4-max,2026-11-24,Qwen4-Max launch post
+Qwen/Qwen4-Max,Qwen 4 Max,HLE (Humanity's Last Exam),51.7,%,Alibaba,VENDOR,https://qwen.ai/blog?id=qwen4-max,2026-11-24,Tool setting not independently verified
+Qwen/Qwen4-Max,Qwen 4 Max,ProgramBench,31.5,%,Alibaba,VENDOR,https://qwen.ai/blog?id=qwen4-max,2026-11-24,"Rebuild programs from scratch"
+Qwen/Qwen4-Max,Qwen 4 Max,Gert Labs Composite Game Benchmark,70.33,%,Gert Labs,benchmark-run,https://gertlabs.com/rankings,2026-11-24,"Third-party run; listed as benchmark-run by BenchLM"
+Qwen/Qwen4-Max,Qwen 4 Max,OpenHarmony Bench v1.2,71.57,%,OpenHarmony Bench,benchmark-run,https://bench.matrix.openharmony.cn/,2026-11-24,Best verified row on BenchLM's ledger
+Qwen/Qwen4-Max,Qwen 4 Max,PostTrainBench v1.2,36.7,%,PostTrainBench,benchmark-run,https://posttrainbench.com/?version=v1.2,2026-11-24,Lower than Claude Opus 5.5's 43.8%

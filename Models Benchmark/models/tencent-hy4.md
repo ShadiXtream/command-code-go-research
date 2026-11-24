@@ -76,7 +76,7 @@ default_effort: "unknown"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 35 | 0–100 | AA headline | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | **37.9** ±3.5 | % resolved | Claude Code; max | TB official | 2026-11-04 | value (rank 25) |
-| LiveBench — overall | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE (no Hy4 row) |
+| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE (no Hy4 row) |
 | LiveBench — reasoning | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
 | LiveBench — coding | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
 | LiveBench — math | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
@@ -86,9 +86,10 @@ default_effort: "unknown"
 | LMArena Text | 2026-11-22 | — | Elo | — | Arena | 2026-11-22 | NM (not in captured top/Pareto) |
 | SWE-bench Verified | 2026-11-24 | — | % resolved | — | SWE-bench | 2026-11-24 | NE (not on Verified board) |
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-No reliable vendor benchmark rows were extracted for Hy4 in this sample. The independent evidence is AA + Terminal-Bench.
+No reliable vendor benchmark rows were extracted for Hy4. Vendor and third-party rows for all models live in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv); they are not used in this file’s ranking.
 
 ## 5. Capability profile
 
