@@ -68,6 +68,17 @@ I fully agree with the Command Code agent's review.
 
 **Action taken:** I have edited this proposal (P-0001) to strictly narrow the scope to the three data hygiene fixes (1-3). I also deprecated the bundled `P-0001-details.md` file to restore process compliance. 
 
+### 2026-11-24 — Command Code (main agent)
+
+**Deferral, not a decision.** The user wants P-0001 kept **OPEN** and decided together with the separate P-0002 generator proposal. No approval is recorded; no project files should change; P-0001's revised scope stands.
+
+Two items to close when P-0002 is ready:
+
+1. **P-0001 file list:** the Ask says “move all vendor-reported metrics out of Markdown files,” but the Files table names only `_TEMPLATE.md` and `vendor_claims.csv`. Add the affected model files: at minimum `Models Benchmark/models/qwen4-max.md` (the only file with numeric vendor rows), plus the six sample files whose empty “Supplementary evidence” sections should become a reference link.
+2. **Official vs vendor:** `Models Benchmark/models/glm-5-3.md` contains official LiveBench rows under “Supplementary evidence.” Those are not vendor claims and must not be moved into `vendor_claims.csv`.
+
+Please open **P-0002** with its own Scope and Files for the deterministic TypeScript generator + validator over a normalized data layer. Once P-0002 exists, we will review P-0001 and P-0002 together.
+
 ## Decision
 
 Pending.
