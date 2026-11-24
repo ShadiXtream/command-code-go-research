@@ -333,8 +333,8 @@ This is the “quick sweep” result: which Go models to use for each task type 
 | P2.5 Self-check | **Done** | See each file’s provenance section |
 | **P2.6 Human review** | **Done (methodology)** | P-0001/P-0002 approved; sample files remain protected |
 | P3.1 Schema + generator/validator | **Done** | `model-benchmarks.csv`, `tools/build-models.ts`, `tools/validate-models.ts`, golden test |
-| P3.2 Populate normalized data | **In progress (13/55)** | Batch A drafts generated; 42 models queued |
-| P3.3 Generate remaining files | **In progress (13/55)** | 13 draft files written; 42 queued |
+| P3.2 Populate normalized data | **In progress (28/55)** | Batches A+B drafts generated; 27 models queued |
+| P3.3 Generate remaining files | **In progress (28/55)** | 28 draft files written; 27 queued |
 | P3.4 Human spot-check | **Pending** | 10% + conflicts |
 | P3.5 Final QA + index | **Pending** | Coverage audit, dataset lock |
 | P4 Phase 2 | **Not started** | — |
@@ -358,36 +358,36 @@ Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBenc
 | 11 | `moonshotai/Kimi-K2.6` | ? | — | 70.5 | — | — | Queued |
 | 12 | `moonshotai/Kimi-K2.5` | ? | — | — | — | 70.8 | Queued |
 | 13 | `z-ai/glm-5.3-flash` | ? | 37.0 | 71.6 | 1,476 | — | Draft |
-| 14 | `z-ai/glm-5.3-flashx` | ? | — | — | — | — | Queued |
+| 14 | `z-ai/glm-5.3-flashx` | ? | — | — | — | — | Draft |
 | 15 | `zai-org/GLM-5.3` | 32 | 41.2 | 76.1* | — | — | **Sample** |
 | 16 | `zai-org/GLM-5.2` | ? | — | 73.2 | — | — | Draft |
 | 17 | `zai-org/GLM-5.2-Fast` | ? | — | — | — | — | Queued |
 | 18 | `zai-org/GLM-5.1` | ? | — | — | — | — | Queued |
 | 19 | `zai-org/GLM-5` | ? | — | — | 1,230 | 72.8 | Queued |
-| 20 | `minimax/minimax-m3.1-flash` | ? | — | — | — | — | Queued |
-| 21 | `MiniMaxAI/MiniMax-M3` | ? | 7.6 | 67.3 | — | — | Queued |
+| 20 | `minimax/minimax-m3.1-flash` | ? | — | — | — | — | Draft |
+| 21 | `MiniMaxAI/MiniMax-M3` | ? | 7.6 | 67.3 | — | — | Draft |
 | 22 | `MiniMaxAI/MiniMax-M2.7` | ? | — | — | — | — | Queued |
 | 23 | `MiniMaxAI/MiniMax-M2.5` | ? | — | — | — | 75.8 | Queued |
 | 24 | `Qwen/Qwen4-Max` | 43 | — | — | — | — | **Sample** |
-| 25 | `Qwen/Qwen3.8-Omni-Flash` | ? | — | — | — | — | Queued |
+| 25 | `Qwen/Qwen3.8-Omni-Flash` | ? | — | — | — | — | Draft |
 | 26 | `Qwen/Qwen3.8-Max-0902` | ? | 27.0 | — | — | — | Draft |
 | 27 | `Qwen/Qwen3.8-Max` | ? | — | 78.5 | — | — | Draft |
 | 28 | `Qwen/Qwen3.8-27B` | ? | — | 75.3 | — | — | Queued |
-| 29 | `Qwen/Qwen3.8-Flash` | ? | — | — | — | — | Queued |
+| 29 | `Qwen/Qwen3.8-Flash` | ? | — | — | — | — | Draft |
 | 30 | `Qwen/Qwen3.7-Max` | ? | — | 73.1 | — | — | Draft |
-| 31 | `Qwen/Qwen3.7-Plus` | ? | — | — | — | — | Queued |
-| 32 | `Qwen/Qwen3.7-Flash` | ? | — | — | — | — | Queued |
+| 31 | `Qwen/Qwen3.7-Plus` | ? | — | — | — | — | Draft |
+| 32 | `Qwen/Qwen3.7-Flash` | ? | — | — | — | — | Draft |
 | 33 | `Qwen/Qwen3.6-Max-Preview` | ? | — | — | 1,468 | — | Queued |
 | 34 | `Qwen/Qwen3.6-Plus` | ? | — | 68.9 | — | — | Queued |
 | 35 | `tencent/hy3-paid` | ? | — | — | — | — | Queued |
 | 36 | `tencent/hy4` | 35 | 37.9 | — | — | — | **Sample** |
 | 37 | `tencent/hy4-flash` | ? | 11.8 | — | — | — | Draft |
-| 38 | `tencent/hy4-preview` | ? | 19.1 | — | — | — | Queued |
-| 39 | `xiaomi/mimo-v2.6-pro` | ? | 27.0 | — | 1,481 | — | Queued |
-| 40 | `xiaomi/mimo-v2.6-flash` | ? | 16.1 | — | 1,448 | — | Queued |
+| 38 | `tencent/hy4-preview` | ? | 19.1 | — | — | — | Draft |
+| 39 | `xiaomi/mimo-v2.6-pro` | ? | 27.0 | — | 1,481 | — | Draft |
+| 40 | `xiaomi/mimo-v2.6-flash` | ? | 16.1 | — | 1,448 | — | Draft |
 | 41 | `stepfun/Step-5-Preview` | ? | — | — | — | — | Queued |
-| 42 | `stepfun/Step-3.7-Flash` | ? | — | — | — | — | Queued |
-| 43 | `stepfun/Step-3.5-Flash` | ? | — | — | — | — | Queued |
+| 42 | `stepfun/Step-3.7-Flash` | ? | — | — | — | — | Draft |
+| 43 | `stepfun/Step-3.5-Flash` | ? | — | — | — | — | Draft |
 | 44 | `meta/muse-ember` | 36 | 30.6 | — | — | — | **Sample** |
 | 45 | `meta/muse-spark-1.3-contributor` | ? | — | — | — | — | Queued |
 | 46 | `meta/muse-spark-1.2-contributor` | ? | — | — | — | — | Queued |
@@ -395,13 +395,13 @@ Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBenc
 | 48 | `thinkingmachines/inkling-2-mini` | 20 | — | — | — | — | Queued |
 | 49 | `thinkingmachines/inkling` | ? | — | 71.9 | — | — | Queued |
 | 50 | `thinkingmachines/inkling-small` | ? | 0.9 | — | — | — | Queued |
-| 51 | `meituan/LongCat-2.0` | ? | — | — | — | — | Queued |
+| 51 | `meituan/LongCat-2.0` | ? | — | — | — | — | Draft |
 | 52 | `ornith/ornith-1.5-122b` | ? | — | — | — | — | Queued |
 | 53 | `nvidia/nemotron-3-ultra-550b-a55b` | ? | — | 67.4 | — | — | Queued |
 | 54 | `nvidia/nemotron-3.5-super-vl` | ? | 0.3 | — | — | — | Queued |
 | 55 | `mistral/mistral-large-4` | ? | 27.6 | 71.8 | — | — | Queued |
-| 56 | `inclusionai/ling-3.1-flash` | ? | — | — | — | — | Queued |
-| 57 | `inclusionai/ling-3.1-flash-1019` | ? | — | — | — | — | Queued |
+| 56 | `inclusionai/ling-3.1-flash` | ? | — | — | — | — | Draft |
+| 57 | `inclusionai/ling-3.1-flash-1019` | ? | — | — | — | — | Draft |
 | 58 | `xai/grok-4.5` | ? | 12.4 | 75.8 | — | — | Queued |
 | 59 | `gpt-5.6-luna` | 24 | 17.6 | 73.6 | — | — | Queued |
 | 60 | `gpt-6-luna` | 28 | 15.2 | 72.0* | — | — | **Sample** |

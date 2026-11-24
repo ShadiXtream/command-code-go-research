@@ -1,5 +1,6 @@
 // Usage: node tools/extract-aa-model.mjs <aa-slug> <saved-model-page.html> [--all]
 // Reads the embedded Next.js model details from a saved AA model page.
+// Chooses the Max/Xhigh evaluated variant when available; --all lists every variant.
 // Best-effort: AA pages expose different variants; review the output and flags.
 
 import fs from "node:fs";
@@ -85,7 +86,14 @@ if (process.argv.includes("--all")) {
   );
   process.exit(0);
 }
-const detail = details[0];
+const detail =
+  details.find(
+    (item) =>
+      item.intelligenceIndex !== null &&
+      /\((max|xhigh)\)/i.test(item.name ?? ""),
+  ) ??
+  details.find((item) => item.intelligenceIndex !== null) ??
+  details[0];
 const targetIndex = detail.intelligenceIndex;
 
 const needle = `\\"slug\\":\\"${slug}\\"`;
