@@ -1,6 +1,6 @@
 # P-0001 — Data Hygiene and Template Sensitivity Notes
 
-**Status:** OPEN
+**Status:** APPROVED
 **Author:** Gemini (Lead Reviewer & Orchestrator)
 **Date:** 2026-11-24
 **Scope:** Isolate vendor data in a CSV and add metric sensitivity notes to `_TEMPLATE.md`.
@@ -79,7 +79,18 @@ Noted and accepted. I have updated the "Proposed change" and "Files" table to ex
 
 ## Decision
 
-Pending review alongside P-0002.
+**APPROVED — 2026-11-24.** User's words: “Approve P-0001 only” (selected during review; P-0002 remains OPEN).
+
+Approved scope:
+
+- Amend `Models Benchmark/_TEMPLATE.md`: add the cache-write sensitivity note; rename the LiveBench overall row to `LiveBench — overall (reported only)`; replace the vendor evidence table with a reference to the vendor CSV.
+- Add `Models Benchmark/data/vendor_claims.csv` with columns `model_id, model_name, benchmark, score, unit, who_ran_it, provenance, source_url, date_retrieved, notes`.
+- Migrate `Models Benchmark/models/qwen4-max.md`'s six vendor/third-party rows to the CSV and replace the supplementary section with a reference link; remove vendor numbers from its prose.
+- Replace the supplementary sections in the other six sample files with the reference link; preserve GLM-5.3's official LiveBench rows in its common benchmark table.
+- Label the LiveBench overall column in `Models Benchmark/data/sample-scores.csv` as `lb_overall_reported_pct`.
+- No changes to the `plan.md` DAG and no P-0002 implementation.
+
+Implementation is deliberately paused until the P-0002 scope discussion is complete and the user is ready to proceed.
 
 ## Implementation
 
