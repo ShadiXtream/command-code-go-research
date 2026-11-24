@@ -81,7 +81,7 @@ default_effort: "medium"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 28 | 0–100 | max | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | **15.2** ±2.7 | % resolved | Codex; max | TB official | 2026-09-22 | value (rank 40) |
-| LiveBench — overall | 2026-06-25 | 72.0* | % | max | BenchLM mirror | 2026-06-25 | value (reported overall) |
+| LiveBench — overall (reported only) | 2026-06-25 | 72.0* | % | max | BenchLM mirror | 2026-06-25 | value (reported overall) |
 | LiveBench — reasoning | 2026-06-25 | 79.7 | % | max | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — coding | 2026-06-25 | 62.3 | % | max | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — math | 2026-06-25 | 94.2 | % | max | LB CSV (derived) | 2026-06-25 | value (derived) |
@@ -93,9 +93,10 @@ default_effort: "medium"
 
 `*` Reported overall is a BenchLM mirror. A 6-category mean derived from the official CSV is ≈73.8; the difference comes from aggregation/version, not a model change. Use the category scores for decisions.
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-No reliable vendor benchmark table was extracted for GPT-6 Luna in this sample. The independent evidence is AA + Terminal-Bench + LiveBench.
+No reliable vendor benchmark rows were extracted for GPT-6 Luna. Vendor and third-party rows for all models live in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv); they are not used in this file’s ranking.
 
 ## 5. Capability profile
 

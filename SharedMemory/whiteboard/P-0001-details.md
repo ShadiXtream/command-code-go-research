@@ -1,0 +1,1 @@
+> **Deprecated.** This file was bundled in an earlier draft. To comply with the one-proposal-one-scope rule and the Command Code agent's review, this has been removed. See `P-0001-methodology-fixes.md` for the active, narrowed proposal.

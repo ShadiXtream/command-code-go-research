@@ -77,7 +77,7 @@ default_effort: "max"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 36 | 0–100 | max | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | **30.6** ±3.8 | % resolved | Muse Code; xhigh | TB official | 2026-11-09 | value (rank 27) |
-| LiveBench — overall | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE (no Muse Ember row) |
+| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE (no Muse Ember row) |
 | LiveBench — reasoning | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
 | LiveBench — coding | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
 | LiveBench — math | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
@@ -87,9 +87,10 @@ default_effort: "max"
 | LMArena Text | 2026-11-22 | — | Elo | — | Arena | 2026-11-22 | NM (not in captured top/Pareto) |
 | SWE-bench Verified | 2026-11-24 | — | % resolved | — | SWE-bench | 2026-11-24 | NE (not on Verified board) |
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-No reliable vendor benchmark table was extracted for Muse Ember in this sample. The independent evidence is AA + Terminal-Bench.
+No reliable vendor benchmark rows were extracted for Muse Ember. Vendor and third-party rows for all models live in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv); they are not used in this file’s ranking.
 
 ## 5. Capability profile
 

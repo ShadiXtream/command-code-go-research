@@ -60,6 +60,8 @@ default_effort: "max"       # or "unknown"
 
 **Cost sanity check:** compute the cost of a typical request (≈800 fresh input + 50K cache read + 150 output) and compare with the Go-page estimate.
 
+**Cache-write sensitivity (only when cache write is billed):** `50K tokens × cache-write $/1M = $X`. Amortize over the number of turns in a session (`$X / N`). The Go `Req/mo` estimate is a cache-hit steady state and does not assume a cache write on every request.
+
 ## 3. Headline metrics (Artificial Analysis)
 
 | Metric | Value | Configuration | Source |
@@ -84,7 +86,7 @@ Use only benchmarks from `sources.md`. Keep raw units. Do not convert.
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | … | 0–100 | effort … | AA | … | value |
 | Terminal-Bench | 4.1 | … | % resolved | agent …; effort … | TB | … | value / NE |
-| LiveBench — overall | 2026-06-25 | … | % | effort … | LB mirror | … | value / STALE |
+| LiveBench — overall (reported only) | 2026-06-25 | … | % | reported figure; no derived mean | LB mirror | … | value / STALE |
 | LiveBench — reasoning | 2026-06-25 | … | % | … | LB CSV (derived) | … | value / STALE |
 | LiveBench — coding | 2026-06-25 | … | % | … | LB CSV (derived) | … | value / STALE |
 | LiveBench — math | 2026-06-25 | … | % | … | LB CSV (derived) | … | value / STALE |
@@ -94,22 +96,22 @@ Use only benchmarks from `sources.md`. Keep raw units. Do not convert.
 | LMArena Text | 2026-11-22 | … | Elo | … | Arena | … | value / NM |
 | SWE-bench Verified | 2026-11-24 | … | % resolved | agent … | SWE-bench | … | value / NE |
 
-### Supplementary evidence (optional)
+### Vendor claims (not comparable)
 
-| Benchmark | Score | Who ran it | Notes | Source |
-|---|---:|---|---|---|
-| … | … | VENDOR / benchmark-run / independent | … | … |
+Vendor-reported and third-party benchmark rows for this model live in
+[`data/vendor_claims.csv`](./data/vendor_claims.csv). Do not copy their numbers
+into this file or use them in a cross-model ranking.
 
 ## 5. Capability profile
 
 | Capability | Evidence | Rating | Confidence |
 |---|---|---|---|
 | General reasoning | AA index, LiveBench reasoning | strong / average / weak | high / medium / low |
-| Coding | Terminal-Bench, LiveBench coding, vendor coding | … | … |
+| Coding | Terminal-Bench, LiveBench coding, vendor coding claim (see CSV) | … | … |
 | Agentic / tool use | Terminal-Bench, AA agentic evals | … | … |
-| Knowledge / factuality | AA index, vendor HLE, AA-Omniscience (if available) | … | … |
+| Knowledge / factuality | AA index, AA-Omniscience (if available), vendor HLE claim (see CSV) | … | … |
 | Long context | Context window + any long-context evidence | … | … |
-| Instruction following | LiveBench IF, vendor | … | … |
+| Instruction following | LiveBench IF, vendor claim (see CSV) | … | … |
 | Multimodal | Input modalities + any vision benchmark | … | … |
 | Speed / latency | AA time/task, TTFT, output speed | … | … |
 | Cost efficiency | AA cost/task + Go credits | … | … |
@@ -139,7 +141,7 @@ Use only benchmarks from `sources.md`. Keep raw units. Do not convert.
 | LiveBench CSV | https://livebench.ai/v1/table_2026_06_25.csv | YYYY-MM-DD | LiveBench categories |
 | Arena | https://arena.ai/leaderboard/chat/text | YYYY-MM-DD | Elo |
 | SWE-bench | https://www.swebench.com/ | YYYY-MM-DD | Verified score |
-| Vendor | … | YYYY-MM-DD | supplementary only |
+| Vendor claims | … | YYYY-MM-DD | `data/vendor_claims.csv` |
 
 **Data-quality flags:** list every `NP`, `NE`, `STALE`, `NM`, `PROXY`, `VENDOR`, and any source conflict.
 
@@ -173,15 +175,18 @@ Use only benchmarks from `sources.md`. Keep raw units. Do not convert.
 5. Never write `0` for missing data.
 6. Never average scores from different benchmark versions.
 7. Every numeric row needs a source and a retrieval date.
-8. Vendor rows go in the supplementary table, never the common table.
-9. If two credible sources disagree, keep both in the provenance/conflict section and mark the row.
-10. Update the changelog for any later change.
+8. Vendor and third-party rows go in `data/vendor_claims.csv`, never in the model file or the common table.
+9. A `LiveBench — overall` value must be a reported figure with a source; never enter a derived mean.
+10. If two credible sources disagree, keep both in the provenance/conflict section and mark the row.
+11. Update the changelog for any later change.
 
 ## Minimum acceptance checklist
 
 - [ ] All front-matter fields filled or explicitly `unknown`.
 - [ ] AA index, cost/task, time/task, TTFT, output speed, context, evaluated effort recorded.
 - [ ] Terminal-Bench, LiveBench, Arena, SWE-bench each resolved to `value`, `NE`, `NP`, `STALE`, or `NM`.
+- [ ] LiveBench overall, if present, is a reported figure with a source, not a derived mean.
+- [ ] No vendor numeric rows in this file; they are in `data/vendor_claims.csv`.
 - [ ] At least one capability judgment has a cited evidence row.
 - [ ] Verdict states best use, avoid use, and Go-budget fit.
 - [ ] Provenance table has a retrieval date for every source.

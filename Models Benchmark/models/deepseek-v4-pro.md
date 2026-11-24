@@ -78,7 +78,7 @@ default_effort: "high"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 23 | 0–100 | max | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | **6.7** ±2.5 | % resolved | Claude Code; max | TB official | 2026-08-13 | value (rank 48) |
-| LiveBench — overall | 2026-06-25 | 71.6* | % | 0813 variant | BenchLM mirror | 2026-06-25 | value (reported overall) |
+| LiveBench — overall (reported only) | 2026-06-25 | 71.6* | % | 0813 variant | BenchLM mirror | 2026-06-25 | value (reported overall) |
 | LiveBench — reasoning | 2026-06-25 | 88.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — coding | 2026-06-25 | 63.8 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — math | 2026-06-25 | 95.5 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
@@ -90,9 +90,12 @@ default_effort: "high"
 
 `*` There are two LiveBench rows: `deepseek-v4-pro` at 77.4 and `deepseek-v4-pro-0813` at 71.6. This file uses the 0813 row to match AA’s release page. A 6-category mean derived from the 0813 row is ≈79.8; the mirror’s overall is 71.6. The gap is an aggregation/version difference, not a model change. Do not quote 79.8 as an official overall.
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-No reliable vendor benchmark table was extracted for V4 Pro in this sample. The independent evidence is AA + Terminal-Bench + LiveBench + Arena.
+No reliable vendor benchmark rows were extracted for V4 Pro. Vendor and third-party rows for all models live in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv); they are not used in this file’s ranking.
+
+### Benchmark context
 
 **Arena context:** 1,458 Elo places it on Arena’s Pareto frontier as a low-cost text model, below MiMo V2.6 Pro (1,481) and above MiMo V2.6 Flash (1,448). The Arena configuration is not stated.
 

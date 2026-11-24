@@ -76,7 +76,7 @@ default_effort: "xhigh"
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | 43 | 0–100 | xhigh | AA | 2026-11-24 | value |
 | Terminal-Bench | 4.1 | — | % resolved | — | TB official | 2026-11-24 | NE (no Qwen4 Max row) |
-| LiveBench — overall | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | STALE (model released after snapshot) |
+| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | STALE (model released after snapshot) |
 | LiveBench — reasoning | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | STALE |
 | LiveBench — coding | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | STALE |
 | LiveBench — math | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | STALE |
@@ -86,27 +86,22 @@ default_effort: "xhigh"
 | LMArena Text | 2026-11-22 | — | Elo | — | Arena | 2026-11-22 | NM (not in captured top/Pareto) |
 | SWE-bench Verified | 2026-11-24 | — | % resolved | — | SWE-bench | 2026-11-24 | NE (not on Verified board) |
 
-### Supplementary evidence (not for cross-model ranking)
+### Vendor claims (not comparable)
 
-| Benchmark | Score | Who ran it | Notes | Source |
-|---|---:|---|---|---|
-| DeepSWE | 75.7% | VENDOR (Alibaba) | Qwen4-Max launch post | https://qwen.ai/blog?id=qwen4-max |
-| HLE (Humanity’s Last Exam) | 51.7% | VENDOR (Alibaba) | Tool setting not independently verified | Qwen launch post |
-| ProgramBench | 31.5% | VENDOR (Alibaba) | “Rebuild programs from scratch” | Qwen launch post |
-| Gert Labs Composite Game Benchmark | 70.33% | Benchmark-run (Gert Labs) | Third-party run, not independent of vendor? Listed as benchmark-run | https://gertlabs.com/rankings |
-| OpenHarmony Bench v1.2 | 71.57% | Benchmark-run (OpenHarmony) | Best verified row on BenchLM’s ledger | https://bench.matrix.openharmony.cn/ |
-| PostTrainBench v1.2 | 36.7% | Benchmark-run (PostTrainBench) | Lower than Claude Opus 5.5’s 43.8% | https://posttrainbench.com/?version=v1.2 |
+The six vendor/third-party rows previously listed here now live in
+[`../data/vendor_claims.csv`](../data/vendor_claims.csv) under `Qwen/Qwen4-Max`.
+They are not independent and are not used in any ranking.
 
-**Interpretation:** Qwen 4 Max has **no independent coding-agent result** in the common set. Its vendor coding numbers are strong, but they are not comparable to Terminal-Bench or SWE-bench. Do not use the 75.7% DeepSWE as if it were a TB score.
+**Interpretation:** Qwen 4 Max has **no independent coding-agent result** in the common set. Its vendor coding claims live in the CSV; they are not comparable to Terminal-Bench or SWE-bench and must not be treated as such.
 
 ## 5. Capability profile
 
 | Capability | Evidence | Rating | Confidence |
 |---|---|---|---|
-| General reasoning | AA index 43; vendor HLE 51.7 | Strong | Medium-high |
-| Coding | Vendor DeepSWE 75.7; no TB/SWE | Promising but unverified | Low-medium |
+| General reasoning | AA index 43; vendor HLE claim (see CSV) | Strong | Medium-high |
+| Coding | Vendor coding claim (see CSV); no TB/SWE | Promising but unverified | Low-medium |
 | Agentic / tool use | AA index includes agentic evals; no TB | Good (inferred) | Medium |
-| Knowledge / factuality | AA index; vendor HLE | Strong | Medium |
+| Knowledge / factuality | AA index; vendor HLE claim (see CSV) | Strong | Medium |
 | Long context | 1M advertised; AA measured 984k | Excellent | High |
 | Instruction following | AA index; no LiveBench IF row | Unknown | Low |
 | Multimodal | Text, image, video input | Excellent | High |
@@ -140,7 +135,7 @@ default_effort: "xhigh"
 | SWE-bench JSON | https://www.swebench.com/ | 2026-11-24 | confirmed no Verified row |
 | BenchLM model ledger | https://benchlm.ai/models/qwen4-max | 2026-11-24 | discovery of vendor links |
 
-**Data-quality flags:** Terminal-Bench `NE`; LiveBench `STALE`; LMArena `NM`; SWE-bench `NE`. All coding numbers in §4 are `VENDOR` or third-party, not independent.
+**Data-quality flags:** Terminal-Bench `NE`; LiveBench `STALE`; LMArena `NM`; SWE-bench `NE`. Vendor/third-party claims are in `../data/vendor_claims.csv`; they are not independent and are excluded from rankings.
 
 ## 8. Changelog
 

@@ -84,11 +84,11 @@ P2 — Sample benchmarks (human gate)
   P2.7 Revise template / data based on review
 
 P3 — Batch benchmarks
-  P3.1 For each remaining Go model: fetch, normalize, write file, validate
-  P3.2 Coverage audit (per model and per benchmark)
-  P3.3 Build common-benchmark matrix + normalized comparison view
+  P3.1 Build normalized schema + TypeScript generator/validator (golden test)
+  P3.2 Populate normalized data for the remaining models
+  P3.3 Generate remaining model files with --write; review the generation report
   P3.4 Human spot-check (10% + all conflicting rows)
-  P3.5 Final QA, index, and dataset lock
+  P3.5 Final QA, coverage audit, index, and dataset lock
 
 P4 — Phase 2 (not started)
   P4.1 Task taxonomy and decision weights
@@ -115,11 +115,11 @@ flowchart TD
   K --> L[P2.5 Self-check]
   L --> M{Human review gate}
   M -- changes --> F
-  M -- approve --> N[P3.1 Batch remaining 55]
-  N --> O[P3.2 Coverage audit]
-  O --> P[P3.3 Common-benchmark matrix]
+  M -- approve --> N[P3.1 Schema + generator/validator]
+  N --> O[P3.2 Populate normalized data]
+  O --> P[P3.3 Generate remaining files]
   P --> Q[P3.4 Human spot-check 10%]
-  Q --> R[P3.5 Final QA + index]
+  Q --> R[P3.5 Final QA + coverage + index]
   R --> S[P4.1 Phase 2 task taxonomy]
   S --> T[P4.2 Scoring model / calculator]
   T --> U[P4.3 Validate on real tasks]
@@ -130,8 +130,10 @@ flowchart TD
 
 - **P0.2 must pass before any inventory file is written.** A wrong model list poisons every downstream file.
 - **P0.4 must be approved before batch writing.** Changing the schema after 20 files creates rework.
-- **P2.6 is a hard human gate.** No batch processing until the sample template and data are accepted.
-- **P3.2 must complete before P3.3.** A comparison matrix without a coverage audit hides missing data.
+- **P2.6 is the sample gate.** P-0001/P-0002 are approved; the seven sample files remain protected while their data is spot-checked.
+- **P3.1 must pass its golden test before P3.3 writes.** The generator refuses to write until the seven samples render consistently.
+- **P3.2 must complete before P3.3.** A normalized row without source dates or status codes is not ready to render.
+- **P3.3 never overwrites `sample`, `approved`, or `done` files.** Only `queued`/`draft` rows are generated.
 - **P4 starts only after P3.5.** Phase 2 needs a locked dataset, not a moving one.
 
 ---
@@ -329,13 +331,17 @@ This is the “quick sweep” result: which Go models to use for each task type 
 | P2.1 Select samples | **Done** | 7 archetypes |
 | P2.2–P2.4 Sample files | **Done** | 7 files in `models/` |
 | P2.5 Self-check | **Done** | See each file’s provenance section |
-| **P2.6 Human review** | **WAITING** | Approval needed before batch |
-| P3 Batch remaining 55 | **Blocked on P2.6** | — |
+| **P2.6 Human review** | **Done (methodology)** | P-0001/P-0002 approved; sample files remain protected |
+| P3.1 Schema + generator/validator | **Done** | `model-benchmarks.csv`, `tools/build-models.ts`, `tools/validate-models.ts`, golden test |
+| P3.2 Populate normalized data | **Pending** | 55 models; CSV currently has 7 sample rows |
+| P3.3 Generate remaining files | **Blocked on P3.2** | `npm run build:models` writes only `queued`/`draft` |
+| P3.4 Human spot-check | **Pending** | 10% + conflicts |
+| P3.5 Final QA + index | **Pending** | Coverage audit, dataset lock |
 | P4 Phase 2 | **Not started** | — |
 
 ### 9.2 62-model checklist
 
-Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBench 2026-06-25; `AR` = LMArena Text; `SWE` = SWE-bench Verified. `?` = not yet fetched. `—` = not published/not in snapshot. **Sample rows are verified to the file contract.** Queued rows contain preliminary single-source captures from the source boards and are **not** yet validated; they guide batching, not decisions, and will be re-fetched in P3.1.
+Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBench 2026-06-25; `AR` = LMArena Text; `SWE` = SWE-bench Verified. `?` = not yet fetched. `—` = not published/not in snapshot. **Sample rows are verified to the file contract.** Queued rows contain preliminary single-source captures from the source boards and are **not** yet validated; they guide batching, not decisions, and will be re-fetched in P3.2.
 
 | # | Model (exact ID) | AA | TB | LB | AR | SWE | Status |
 |---:|---|---:|---:|---:|---:|---:|---|
@@ -406,25 +412,27 @@ Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBenc
 
 ---
 
-## 10. Batch plan (after approval)
+## 10. P3.2 data-population batches
 
-### Batch A — Remaining open-weight flagships (12)
+These batches populate `model-benchmarks.csv` in P3.2; P3.3 renders the files. They are organized for practical review, not strict dependency order.
 
-`deepseek-v4.1-flash`, `deepseek-v4-flash`, `deepseek-v4-flash-fast`, `deepseek-v4.1-flash-fast`, `deepseek-v4-flash-vision-exp`, `Kimi-K3`, `Kimi-K2.7-Code`, `GLM-5.3-Flash`, `GLM-5.2`, `Qwen3.8-Max`, `Qwen3.7-Max`, `Hy4-Flash`.
+### Batch A — Remaining open-weight flagships (13)
+
+`deepseek-v4.1-flash`, `deepseek-v4-flash`, `deepseek-v4-flash-fast`, `deepseek-v4.1-flash-fast`, `deepseek-v4-flash-vision-exp`, `Kimi-K3`, `Kimi-K2.7-Code`, `GLM-5.3-Flash`, `GLM-5.2`, `Qwen3.8-Max`, `Qwen3.8-Max-0902`, `Qwen3.7-Max`, `Hy4-Flash`.
 
 ### Batch B — Cheap/high-volume models (15)
 
-`Qwen3.7-Flash`, `Qwen3.8-Flash`, `Qwen3.8-Omni-Flash`, `GLM-5.3-FlashX`, `MiniMax-M3.1-Flash`, `MiniMax-M3`, `Hy4-Flash` (if not in A), `Hy4-Preview`, `MiMo-V2.6-Pro`, `MiMo-V2.6-Flash`, `Step-3.7-Flash`, `Step-3.5-Flash`, `Ling-3.1-Flash`, `Ling-3.1-Flash-1019`, `LongCat-2.0`.
+`Qwen3.7-Flash`, `Qwen3.8-Flash`, `Qwen3.8-Omni-Flash`, `Qwen3.7-Plus`, `GLM-5.3-FlashX`, `MiniMax-M3.1-Flash`, `MiniMax-M3`, `Hy4-Preview`, `MiMo-V2.6-Pro`, `MiMo-V2.6-Flash`, `Step-3.7-Flash`, `Step-3.5-Flash`, `Ling-3.1-Flash`, `Ling-3.1-Flash-1019`, `LongCat-2.0`.
 
 ### Batch C — Specialized/coding models (12)
 
 `Kimi-K2.7-Code-Highspeed`, `Kimi-K2.6`, `Kimi-K2.5`, `MiniMax-M2.7`, `MiniMax-M2.5`, `Qwen3.8-27B`, `Qwen3.6-Max-Preview`, `Qwen3.6-Plus`, `GLM-5.2-Fast`, `GLM-5.1`, `GLM-5`, `Grok-4.5`.
 
-### Batch D — Remaining/limited-data models (16)
+### Batch D — Remaining/limited-data models (15)
 
 `Hy3`, `Step-5-Preview`, `Muse-Spark-1.3-Contributor`, `Muse-Spark-1.2-Contributor`, `Muse-Spark-Open`, `Inkling-2-Mini`, `Inkling`, `Inkling-Small`, `Ornith-1.5-122B`, `Nemotron-3-Ultra`, `Nemotron-3.5-Super-VL`, `Mistral-Large-4`, `GPT-5.6-Luna`, `Flint`, `Glyph-Cluster`.
 
-Batches are organized for practical review, not strict dependency order. Every file follows the same gate: source → normalize → write → self-check.
+Each row follows the same gate: source → normalize → add to `model-benchmarks.csv` → validate → generate.
 
 ---
 
