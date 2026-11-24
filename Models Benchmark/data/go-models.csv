@@ -1,0 +1,63 @@
+n,id,name,provider,context,in_price,out_price,cache_read,cache_write,go_credits,req_per_month,class,notes
+1,deepseek/deepseek-v4.1-flash,DeepSeek V4.1 Flash (latest),DeepSeek,1M,0.15,0.60,0.003,,10,25600,open,reasoning off/low/high/max; vision
+2,deepseek/deepseek-v4-flash,DeepSeek V4 Flash (latest),DeepSeek,1M,0.15,0.60,0.003,,6,15400,open,reasoning off/high/max
+3,deepseek/deepseek-v4-flash-fast,DeepSeek V4 Flash Fast,DeepSeek,1M,0.28,0.56,0.07,,8,2090,open,low/high/max; low-latency serving
+4,deepseek/deepseek-v4.1-flash-fast,DeepSeek V4.1 Flash Fast (latest),DeepSeek,1M,0.16,0.58,0.016,,6,5750,open,off/low/high/max; off-peak shown
+5,deepseek/deepseek-v4-pro,DeepSeek V4 Pro (latest),DeepSeek,1M,0.66,1.98,0.022,,6,2960,open-mit,off/high/max; off-peak shown; peak 1.32/3.96
+6,deepseek/deepseek-v4-flash-vision-exp,DeepSeek V4 Flash Vision (exp),DeepSeek,1M,0.15,0.60,0.003,,6,15400,open,experimental vision; off-peak shown
+7,moonshotai/Kimi-K3.1-Pro,Kimi K3.1 Pro,Moonshot/Kimi,1M,2.00,10.00,0.20,,6,441,open-restricted,low/high/max; vision
+8,moonshotai/Kimi-K3,Kimi K3,Moonshot/Kimi,1M,3.00,15.00,0.30,,8,392,open-restricted,low/high/max
+9,moonshotai/Kimi-K2.7-Code,Kimi K2.7 Code,Moonshot/Kimi,256K,0.95,4.00,0.19,,9,814,open-restricted,coding; vision
+10,moonshotai/Kimi-K2.7-Code-Highspeed,Kimi K2.7 Code HighSpeed,Moonshot/Kimi,262K,1.90,8.00,0.38,,6,271,open-restricted,high-speed coding; vision
+11,moonshotai/Kimi-K2.6,Kimi K2.6,Moonshot/Kimi,256K,0.95,4.00,0.16,,6,,open,long-horizon coding; vision
+12,moonshotai/Kimi-K2.5,Kimi K2.5,Moonshot/Kimi,256K,0.60,3.00,0.10,,6,,open,multimodal frontend coding
+13,z-ai/glm-5.3-flash,GLM-5.3 Flash,Z.ai,1M,0.15,0.50,0.03,,10,5900,open,low/high/max; vision
+14,z-ai/glm-5.3-flashx,GLM-5.3 FlashX,Z.ai,1M,0.37,1.25,0.075,,6,1420,open,high-speed GLM-5.3 Flash
+15,zai-org/GLM-5.3,GLM-5.3,Z.ai,1M,1.40,4.40,0.26,,10,677,open-restricted,low/high/max; text-only
+16,zai-org/GLM-5.2,GLM-5.2,Z.ai,1M,1.40,4.40,0.26,,10,677,open,high/max
+17,zai-org/GLM-5.2-Fast,GLM-5.2 Fast,Z.ai,1M,3.00,10.25,0.50,,9,311,open,high-throughput serving
+18,zai-org/GLM-5.1,GLM-5.1,Z.ai,200K,1.40,4.40,0.26,,6,,open,autonomous coding agent
+19,zai-org/GLM-5,GLM-5,Z.ai,200K,1.00,3.20,0.20,,6,,open,multi-mode thinking
+20,minimax/minimax-m3.1-flash,MiniMax M3.1 Flash,MiniMax,1M,0.15,0.60,0.015,,6,6350,open,low/medium/high/xhigh/max; multimodal
+21,MiniMaxAI/MiniMax-M3,MiniMax M3,MiniMax,1M,0.30,1.20,0.06,,8,2360,open,low/medium/high; 50% off
+22,MiniMaxAI/MiniMax-M2.7,MiniMax M2.7,MiniMax,,0.30,1.20,0.06,,6,,open,software-engineering agent
+23,MiniMaxAI/MiniMax-M2.5,MiniMax M2.5,MiniMax,200K,0.30,1.20,0.03,,6,,open,full-stack agentic dev
+24,Qwen/Qwen4-Max,Qwen 4 Max,Alibaba,1M,1.50,4.50,0.075,1.875,6,1030,closed,off/low/high/xhigh; text+image+video
+25,Qwen/Qwen3.8-Omni-Flash,Qwen 3.8 Omni Flash,Alibaba,1M,0.15,0.47,0.016,,6,5920,open-restricted,low/medium/xhigh; omni-modal
+26,Qwen/Qwen3.8-Max-0902,Qwen 3.8 Max 0902,Alibaba,1M,2.00,6.00,0.25,,7,458,closed,low/medium/xhigh
+27,Qwen/Qwen3.8-Max,Qwen 3.8 Max,Alibaba,1M,2.00,6.00,0.25,2.50,7,458,closed,low/medium/xhigh
+28,Qwen/Qwen3.8-27B,Qwen 3.8 27B,Alibaba,262K,0.40,3.00,0.04,,10,3420,open,low/medium/xhigh; vision
+29,Qwen/Qwen3.8-Flash,Qwen 3.8 Flash,Alibaba,1M,0.16,0.47,0.016,,6,5870,open-restricted,low/medium/xhigh
+30,Qwen/Qwen3.7-Max,Qwen 3.7 Max,Alibaba,1M,2.50,7.50,0.50,3.13,10,351,closed,frontier coding
+31,Qwen/Qwen3.7-Plus,Qwen 3.7 Plus,Alibaba,1M,0.40,1.60,0.08,0.50,10,2160,closed,agentic coding
+32,Qwen/Qwen3.7-Flash,Qwen 3.7 Flash,Alibaba,1M,0.03,0.13,0.006,0.038,6,,closed,cheapest paid model on Go
+33,Qwen/Qwen3.6-Max-Preview,Qwen 3.6 Max Preview,Alibaba,200K,1.30,7.80,0.26,1.63,6,,closed,vibe coding
+34,Qwen/Qwen3.6-Plus,Qwen 3.6 Plus,Alibaba,200K,0.50,3.00,0.10,,10,1670,open-restricted,agentic coding
+35,tencent/hy3-paid,Tencent Hy3,Tencent,262K,0.14,0.58,0.035,,10,5060,open,sparse-MoE reasoning
+36,tencent/hy4,Tencent Hy4,Tencent,1M,0.834,2.501,0.042,,6,1840,open-restricted,low/medium/high; vision
+37,tencent/hy4-flash,Tencent Hy4 Flash,Tencent,1M,0.07,0.281,0.003,,6,22900,open-restricted,off/high
+38,tencent/hy4-preview,Tencent Hy4 Preview,Tencent,1M,0.834,2.501,0.042,,6,1840,open-restricted,low/medium/high
+39,xiaomi/mimo-v2.6-pro,MiMo V2.6 Pro,Xiaomi,1.05M,0.435,0.87,0.0036,,6,8550,open,flagship multimodal agentic
+40,xiaomi/mimo-v2.6-flash,MiMo V2.6 Flash,Xiaomi,1.05M,0.14,0.28,0.0028,,6,19500,open,efficient multimodal
+41,stepfun/Step-5-Preview,Step 5 Preview,StepFun,1M,1.00,2.70,0.05,,6,1560,open,low/medium/high; 600B sparse MoE
+42,stepfun/Step-3.7-Flash,Step 3.7 Flash,StepFun,256K,0.20,1.15,0.04,,6,2510,open,multimodal sparse MoE
+43,stepfun/Step-3.5-Flash,Step 3.5 Flash,StepFun,262K,0.09,0.30,0.02,,6,5300,open,fast agentic reasoning
+44,meta/muse-ember,Muse Ember,Meta,1.05M,0.10,0.50,0.004,,6,15800,closed,low/medium/high/xhigh/max; vision
+45,meta/muse-spark-1.3-contributor,Muse Spark 1.3 Contributor,Meta,1.05M,0.10,0.20,0.002,,6,27300,closed,low/medium/high/xhigh; ~95% off
+46,meta/muse-spark-1.2-contributor,Muse Spark 1.2 Contributor,Meta,1.05M,0.10,0.20,0.002,,6,27300,closed,low/medium/high/xhigh; ~95% off
+47,meta/muse-spark-open,Muse Spark Open,Meta,1.05M,1.25,4.25,0.15,,6,642,open,low/medium/high; coding/agentic
+48,thinkingmachines/inkling-2-mini,Inkling 2 Mini,Thinking Machines,1M,0.075,0.30,0.015,,6,6900,open,off/low/medium/high/max; live-catalog addition
+49,thinkingmachines/inkling,Inkling,Thinking Machines,256K,1.00,4.05,0.17,,6,593,open,multimodal MoE
+50,thinkingmachines/inkling-small,Inkling Small,Thinking Machines,1M,0.50,1.20,0.10,,6,1060,open,lightweight MoE
+51,meituan/LongCat-2.0,LongCat 2.0,Meituan,1M,0.30,1.20,0.006,,10,12800,open,trillion-parameter agentic
+52,ornith/ornith-1.5-122b,Ornith 1.5 122B,Ornith,262K,0.16,0.64,0.02,,6,4780,open,fast MoE agentic coding
+53,nvidia/nemotron-3-ultra-550b-a55b,Nemotron 3 Ultra,NVIDIA,1M,0.60,2.40,0.12,,6,862,open,long-horizon autonomous agents
+54,nvidia/nemotron-3.5-super-vl,Nemotron 3.5 Super VL,NVIDIA,262K,0.20,0.50,0.04,,6,2650,open,low/medium/high; vision-language
+55,mistral/mistral-large-4,Mistral Large 4,Mistral,524K,1.36,4.18,0.14,,6,672,open,low/medium/high; multimodal
+56,inclusionai/ling-3.1-flash,Ling 3.1 Flash,InclusionAI,262K,0.30,0.90,0.06,,6,1750,open,low/medium/high; hybrid reasoning
+57,inclusionai/ling-3.1-flash-1019,Ling 3.1 Flash 1019,InclusionAI,1M,0.30,0.90,0.06,,6,1750,open,low/medium/high; 1M variant
+58,xai/grok-4.5,Grok 4.5,xAI,500K,2.00,6.00,0.50,,6,216,closed,low/medium/high
+59,gpt-5.6-luna,GPT-5.6 Luna,OpenAI,1.05M,0.20,1.20,0.02,0.25,6,4440,closed,low/medium/high/xhigh/max; deprecated upstream
+60,gpt-6-luna,GPT-6 Luna,OpenAI,1.05M,0.10,0.50,0.01,0.125,6,9090,closed,low/medium/high/xhigh/max; vision
+61,recursive/flint-v1.0:free,Flint,Recursive,262K,0,0,0,,0,,open-free,40B total/2.5B active; 1000 req/day; no ZDR
+62,stealth/glyph-cluster:free,Glyph Cluster,Stealth,256K,0,0,0,,0,,stealth-free,low/medium/high/xhigh; 1000 req/day; no ZDR

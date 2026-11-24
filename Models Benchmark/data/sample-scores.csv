@@ -1,0 +1,8 @@
+model,cc_id,aa_index,aa_cost_task_usd,aa_time_task_min,aa_ttft_s,aa_speed_tok_s,tb_4_1_pct,lb_overall_pct,lb_reasoning,lb_coding,lb_math,lb_data_analysis,lb_language,lb_if,arena_elo,swe_verified_pct,flags
+Qwen 4 Max,Qwen/Qwen4-Max,43,3.27,24.5,89.49,72,,,,,,,,,,,"TB NE; LB STALE; Arena NM; SWE NE"
+Kimi K3.1 Pro,moonshotai/Kimi-K3.1-Pro,46,3.68,35.7,140.23,34,59.7,,,,,,,,,,"LB NE (K3 row is different); Arena NM; SWE NE"
+Tencent Hy4,tencent/hy4,35,1.03,13.8,99.30,94,37.9,,,,,,,,,,"LB NE; Arena NM; SWE NE; AA effort not stated"
+GLM-5.3,zai-org/GLM-5.3,32,5.01,27.8,86.28,71,41.2,76.1,79.2,68.1,94.2,66.2,76.1,88.5,,,"LB mirror/derived discrepancy; Arena NM; SWE NE"
+Muse Ember,meta/muse-ember,36,0.14,3.3,5.10,420,30.6,,,,,,,,,,"LB NE; Arena NM; SWE NE; effort-list conflict"
+GPT-6 Luna,gpt-6-luna,28,0.15,10.9,56.99,115,15.2,72.0,79.7,62.3,94.2,69.0,64.6,73.1,,,"AA max 28 vs default medium 18; LB mirror/derived; Arena NM; SWE NE"
+DeepSeek V4 Pro,deepseek/deepseek-v4-pro,23,1.77,19.1,73.21,86,6.7,71.6,88.6,63.8,95.5,70.6,75.5,84.6,1458,,"0813 mapping assumed; LB two-row conflict; Arena config unknown; SWE NE"

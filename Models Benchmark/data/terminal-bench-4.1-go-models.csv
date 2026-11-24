@@ -1,0 +1,22 @@
+model,tb_4_1_pct,ci_pct,agent,effort,date,rank,tokens,cost_usd,mapping_note
+Kimi K3.1 Pro,59.7,4.2,Claude Code,max,2026-10-24,11,3.2B,1100,exact
+GLM-5.3,41.2,3.3,Claude Code,max,2026-08-14,20,8.7B,2700,exact
+DeepSeek V4.1 Flash 1017,38.5,3.8,Claude Code,max,2026-10-17,23,8.2B,200,dated 1017 variant; CC "latest" assumed
+Hy4,37.9,3.5,Claude Code,max,2026-11-04,25,5.3B,300,exact
+GLM-5.3-Flash,37.0,3.6,Claude Code,max,2026-08-26,26,8.2B,400,exact
+Muse Ember,30.6,3.8,Muse Code,xhigh,2026-11-09,27,8.1B,200,exact
+Mistral Large 4,27.6,3.9,Claude Code,max,2026-10-06,28,5.8B,700,exact
+Qwen3.8-Max-0902,27.0,3.9,Claude Code,max,2026-09-02,29,3.0B,4600,exact
+MiMo V2.6 Pro,27.0,3.6,mini-swe-agent,none,2026-09-22,29,7.8B,300,exact
+Kimi K3,23.0,3.7,Claude Code,max,2026-07-16,32,4.9B,1900,exact
+Hy4 Preview,19.1,3.1,Claude Code,max,2026-08-28,36,6.0B,700,exact
+GPT-5.6 Luna,17.6,2.9,Codex,max,2026-06-26,38,11.6B,300,exact
+MiMo V2.6 Flash,16.1,3.4,mini-swe-agent,none,2026-09-22,39,9.9B,200,exact
+GPT-6 Luna,15.2,2.7,Codex,max,2026-09-22,40,3.9B,100,exact
+Grok 4.5,12.4,2.6,Grok Build,high,2026-07-16,43,3.4B,2100,exact
+Hy4 Flash,11.8,2.8,mini-swe-agent,none,2026-11-16,46,4.5B,0,exact
+MiniMax M3,7.6,2.8,mini-swe-agent,none,2026-06-01,47,16.5B,1100,exact
+DeepSeek V4 Pro 0813,6.7,2.5,Claude Code,max,2026-08-13,48,3.8B,700,exact to AA 0813; CC "latest" assumed
+Inkling Small,0.9,0.9,mini-swe-agent,none,2026-07-30,52,0.4B,0,exact (not Inkling Small 2)
+Nemotron 3.5 Super VL,0.3,0.6,mini-swe-agent,none,2026-10-15,53,3.3B,200,exact
+Inkling,0.0,0.0,mini-swe-agent,none,2026-07-17,54,1.4B,1000,exact
