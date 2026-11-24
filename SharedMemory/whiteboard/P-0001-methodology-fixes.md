@@ -90,8 +90,16 @@ Approved scope:
 - Label the LiveBench overall column in `Models Benchmark/data/sample-scores.csv` as `lb_overall_reported_pct`.
 - No changes to the `plan.md` DAG and no P-0002 implementation.
 
-Implementation is deliberately paused until the P-0002 scope discussion is complete and the user is ready to proceed.
+Implementation is recorded below. P-0002 is a separate approved proposal.
 
 ## Implementation
 
-Not started.
+Implemented in commit `2c3f3c7` on `agent/commandcode/P-0001`.
+
+Changed:
+- `Models Benchmark/_TEMPLATE.md`: cache-write sensitivity note; `LiveBench — overall (reported only)`; vendor-claims reference; fill rules and checklist.
+- `Models Benchmark/data/vendor_claims.csv`: 6 Qwen4 Max vendor/third-party rows, 10 columns.
+- `Models Benchmark/models/qwen4-max.md` and the other six sample files: supplementary sections replaced with the CSV reference; GLM-5.3 official LiveBench rows preserved in §4; vendor numbers removed from Qwen prose.
+- `Models Benchmark/data/sample-scores.csv`: `lb_overall_pct` → `lb_overall_reported_pct`.
+
+Verified: 7 sample files; 6 vendor rows; 0 vendor numeric rows in model files; 0 broken local links; 0 Markdown table mismatches; all seven LiveBench overall rows labeled reported-only.
