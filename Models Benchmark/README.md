@@ -11,14 +11,29 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 | [`_TEMPLATE.md`](./_TEMPLATE.md) | The exact schema every model file must follow |
 | [`../GOModels.md`](../GOModels.md) | The verified 62-model Go inventory (IDs, prices, credits) |
 | [`models/`](./models/) | One Markdown file per model |
+| [`data/model-benchmarks.csv`](./data/model-benchmarks.csv) | Normalized 56-column schema; currently the seven golden samples |
+| [`data/vendor_claims.csv`](./data/vendor_claims.csv) | Isolated vendor/third-party claims; never used in rankings |
 | [`data/`](./data/) | Machine-readable snapshots: Go inventory, LiveBench CSV, SWE-bench CSV, Terminal-Bench Go rows, sample score matrix |
+| [`../tools/`](../tools/) | Strict TypeScript generator, validator, and golden test |
 
 ## Current state
 
 - **Inventory:** 62/62 Go models verified.
-- **Samples:** 7 files ready for human review — Qwen 4 Max, Kimi K3.1 Pro, Tencent Hy4, GLM-5.3, Muse Ember, GPT-6 Luna, DeepSeek V4 Pro.
-- **Batch:** 55 models queued, blocked on the sample review gate.
+- **Samples:** 7 files, protected as `status: sample` — Qwen 4 Max, Kimi K3.1 Pro, Tencent Hy4, GLM-5.3, Muse Ember, GPT-6 Luna, DeepSeek V4 Pro.
+- **Approvals:** P-0001 (data hygiene) approved; P-0002 (generator) approved with conditions.
+- **P3.1 tooling:** complete — normalized schema, generator, validator, golden test.
+- **Batch:** 55 models queued for P3.2 data population.
 - **Phase 2:** not started; begins after the dataset is locked.
+
+## Run the tools
+
+```bash
+npm install
+npm run check:models     # schema + files + golden samples
+npm test                 # golden samples + overwrite guard
+npm run validate:models  # structural validation
+npm run build:models     # writes queued/draft only; sample/approved/done are protected
+```
 
 ## How to review the samples
 
@@ -30,7 +45,7 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
    - missing benchmarks are marked `NE` / `NM` / `STALE`, not zero;
    - the verdict is consistent with the evidence.
 3. Open `data/sample-scores.csv` for the side-by-side matrix.
-4. Approve, request schema changes, or flag specific numbers.
+4. Flag specific numbers in the whiteboard; sample data remains spot-checkable even though the methodology is approved.
 
 ## Design rule
 

@@ -1,0 +1,17 @@
+{
+  "name": "command-code-go-research",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:models": "tsx tools/build-models.ts --check",
+    "build:models": "tsx tools/build-models.ts --write",
+    "validate:models": "tsx tools/validate-models.ts",
+    "test:models": "tsx tools/build-models.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
