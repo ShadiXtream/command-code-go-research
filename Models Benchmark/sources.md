@@ -46,6 +46,7 @@
 - Scores are effort-dependent. Example: GPT-6 Luna scores 28 at `max`, 23 at `xhigh`, 21 at `high`, 18 at `medium` (its default), 10 at `low`, 9 non-reasoning. Always record the effort.
 - AA’s model page can list several configurations; the headline is not always the default.
 - **P3.2 coverage finding:** AA has no Intelligence Index for several current models, including DeepSeek V4.1 Flash (latest), DeepSeek V4 Flash 0731, Kimi K3 (Max), Kimi K2.7 Code, GLM-5.2, Qwen3.8 Max 0803, and Qwen3.7 Max. Use an evaluated variant only with an explicit `PROXY` flag; never substitute a low-effort variant for the headline.
+- **P3.2 Batch B coverage:** AA indices are available for MiniMax M3.1 Flash, MiniMax M3, MiMo V2.6 Pro, MiMo V2.6 Flash, and Ling 3.1 Flash 1019; the other ten Batch B models have no current AA index.
 - AA’s intelligence index is a weighted composite, not a task-specific guarantee. Use it as an anchor, not a verdict.
 - AA pricing is the provider’s API price, which may differ from Command Code’s Go-page price.
 
