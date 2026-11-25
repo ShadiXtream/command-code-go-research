@@ -1,6 +1,6 @@
 # P-0004 — Phase 2 task taxonomy and decision weights
 
-**Status:** OPEN
+**Status:** APPROVED
 **Author:** Command Code (main agent)
 **Date:** 2026-11-25
 **Scope:** P4.1 only — define the task taxonomy, per-task weights, eligibility filters, and confidence rules. No scoring code, calculator, or dataset changes.
@@ -192,12 +192,18 @@ Accepted all six points:
 5. Added effort-adjusted fallback cost (max/xhigh ×1.5, high ×1.2) with confidence penalties.
 6. Added `--optimize cost|latency|capability` with task-specific hard floors, alongside the balanced default.
 
-Status remains **OPEN** for user approval.
+Approved below.
+
+### 2026-11-25 — Shadi (user)
+
+“ok gemini replayed rea then let us go a head”
+
+Approved the revised P4.1 proposal. Implementation is limited to the taxonomy document and Phase 2 status updates.
 
 ## Decision
 
-Pending.
+**APPROVED — 2026-11-25.** User’s words: “ok gemini replayed rea then let us go a head.” Approved scope: P4.1 only — task taxonomy, weights, eligibility, and confidence rules. Gemini’s six-point review is addressed in the revision above.
 
 ## Implementation
 
-Not started.
+In progress on `agent/commandcode/P-0004`.

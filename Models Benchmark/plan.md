@@ -337,7 +337,9 @@ This is the “quick sweep” result: which Go models to use for each task type 
 | P3.3 Generate remaining files | **Done (55/55)** | 55 draft files written; 7 protected samples |
 | P3.4 Human spot-check | **Done** | 6 random + 27 flagged rows; see `review/P3.4-spot-check.md` |
 | P3.5 Final QA + index | **Done (locked)** | 62/62 coverage, checklist reconciled, `data/dataset-lock.json` |
-| P4 Phase 2 | **Not started** | — |
+| P4.1 Task taxonomy + weights | **Done** | `phase2/taxonomy.md` |
+| P4.2 Scoring spec + calculator | **Next** | — |
+| P4 Phase 2 | **In progress** | P4.1 done |
 
 ### 9.2 62-model checklist
 
@@ -436,18 +438,33 @@ Each row follows the same gate: source → normalize → add to `model-benchmark
 
 ---
 
-## 11. Phase 2 placeholder
+## 11. Phase 2 — decision system
 
-Once the dataset is locked, Phase 2 turns it into a decision system:
+The dataset is locked at 62 models. Phase 2 turns it into a routing system with explicit eligibility and confidence; it does not publish a single “best model.”
 
-1. **Task taxonomy** — planning, research, extraction, coding, verification, writing, long-context, multimodal, latency-sensitive, budget-sensitive.
-2. **Weights per task** — e.g., coding = 50% Terminal-Bench + 30% AA coding-related index + 20% cost; research = 50% AA + 30% LiveBench reasoning + 20% cost.
-3. **Eligibility filters** — context window, modality, Go credits, latency ceiling, ZDR requirement.
-4. **Scoring model** — only on benchmarks with coverage; missing data lowers confidence, not score.
-5. **Validation** — run a handful of real tasks per type and compare predicted vs actual.
-6. **Publish** — a routing table and calculator, not a single “best model” claim.
+### 11.1 P4.1 — taxonomy and weights (done)
 
-No Phase 2 work starts until the P3.5 dataset lock.
+`phase2/taxonomy.md` defines:
+
+- 10 task profiles: planning, research, extraction, coding, verification, writing, long_context, multimodal, vision_to_code, and latency.
+- Core weights that use only broadly covered metrics; Arena and SWE are capped tie-breakers.
+- Primary-metric penalties: 0.8× score, 40% confidence cap, and an unproven label when the heaviest metric is missing.
+- `--budget` as a global weight modifier, not a task.
+- `--optimize cost|latency|capability` with hard floors and single-objective sorting.
+- **Proxy Only** labels for `multimodal` and `vision_to_code`; the dataset has no true visual benchmark.
+- Effort-adjusted fallback cost and coverage-based confidence.
+
+### 11.2 P4.2 — scoring spec + calculator (next)
+
+Implement percentile normalization, primary-metric penalties, effort-adjusted cost, eligibility filters, balanced/optimize modes, and a `score` CLI. No publish before P4.3.
+
+### 11.3 P4.3 — validation
+
+Run real tasks per profile, compare predicted vs actual, and record misses. Adjust weights or floors only through a versioned proposal.
+
+### 11.4 P4.4 — publish
+
+Publish a routing table and calculator, not a single best-model claim. Every result carries coverage, confidence, and configuration caveats.
 
 ---
 
