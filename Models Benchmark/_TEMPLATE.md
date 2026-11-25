@@ -47,7 +47,7 @@ default_effort: "max"       # or "unknown"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $… |
+| Go monthly allowance (shared $10 pool) | $… |
 | Input $/1M | … |
 | Output $/1M | … |
 | Cache read $/1M | … |
@@ -61,6 +61,8 @@ default_effort: "max"       # or "unknown"
 **Cost sanity check:** compute the cost of a typical request (≈800 fresh input + 50K cache read + 150 output) and compare with the Go-page estimate.
 
 **Cache-write sensitivity (only when cache write is billed):** `50K tokens × cache-write $/1M = $X`. Amortize over the number of turns in a session (`$X / N`). The Go `Req/mo` estimate is a cache-hit steady state and does not assume a cache write on every request.
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 ## 3. Headline metrics (Artificial Analysis)
 

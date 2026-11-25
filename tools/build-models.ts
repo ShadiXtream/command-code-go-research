@@ -273,7 +273,7 @@ function economicsSection(record: ModelRecord): string {
     "",
     "| Field | Value |",
     "|---|---:|",
-    `| Go monthly credits | $${display(field(g, "go_credits"), "0")} |`,
+    `| Go monthly allowance (shared $10 pool) | $${display(field(g, "go_credits"), "0")} |`,
     `| Input $/1M | ${display(inPrice)} |`,
     `| Output $/1M | ${display(outPrice)} |`,
     `| Cache read $/1M | ${display(cacheRead)} |`,
@@ -288,11 +288,15 @@ function economicsSection(record: ModelRecord): string {
     cacheWriteCost !== undefined
       ? `\n**Cache-write sensitivity:** 50K × $${cacheWrite}/1M = **$${cacheWriteCost.toFixed(4)}** for the first write; amortized over N turns = $${cacheWriteCost.toFixed(4)}/N. The Go request estimate above is a cache-hit steady state.`
       : "",
+    "",
+    "**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.",
   ].join("\n");
 }
 
 function aaSection(record: ModelRecord): string {
   const b = record.bench;
+  const cost = field(b, "aa_cost_task_usd");
+  const ttft = field(b, "aa_ttft_s");
   return [
     "## 3. Headline metrics (Artificial Analysis)",
     "",
@@ -300,9 +304,9 @@ function aaSection(record: ModelRecord): string {
     "|---|---:|---|---|",
     `| AA Intelligence Index v5.0.1 | ${display(field(b, "aa_index"))} | ${display(field(b, "aa_config"))} | AA |`,
     `| AA rank | ${display(field(b, "aa_rank"))} | — | AA |`,
-    `| Cost per Intelligence Index task | $${display(field(b, "aa_cost_task_usd"))} | ${display(field(b, "aa_config"))} | AA |`,
+    `| Cost per Intelligence Index task | ${cost ? `$${cost}` : "—"} | ${display(field(b, "aa_config"))} | AA |`,
     `| Time per Intelligence Index task | ${display(field(b, "aa_time_task_min"))} min | ${display(field(b, "aa_config"))} | AA |`,
-    `| Time to first answer token | ${display(field(b, "aa_ttft_s"))} s | ${display(field(b, "aa_config"))} | AA |`,
+    `| Time to first answer token | ${ttft ? `${ttft} s` : "—"} | ${display(field(b, "aa_config"))} | AA |`,
     `| Output speed | ${display(field(b, "aa_speed_tok_s"))} tok/s | ${display(field(b, "aa_config"))} | AA |`,
     `| Output tokens on index | ${display(field(b, "aa_output_tokens"))} | ${display(field(b, "aa_config"))} | AA |`,
     `| Context window (AA) | ${display(field(b, "aa_context"))} | — | AA |`,
@@ -324,10 +328,14 @@ function tbRow(b: CsvRow): string {
 
 function lbOverallRow(b: CsvRow): string {
   const score = field(b, "lb_overall_reported_pct");
-  if (field(b, "lb_status") === "value" && score !== "") {
+  if (score !== "") {
     return `| LiveBench — overall (reported only) | 2026-06-25 | ${score}* | % | reported figure | BenchLM mirror | ${display(field(b, "lb_date"))} | value (reported overall) |`;
   }
-  return `| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | ${display(field(b, "lb_date"))} | ${display(field(b, "lb_status"), "NE")} |`;
+  const status =
+    field(b, "lb_status") === "value"
+      ? "NM"
+      : display(field(b, "lb_status"), "NE");
+  return `| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | ${display(field(b, "lb_date"))} | ${status} |`;
 }
 
 function lbCategoryRow(b: CsvRow, label: string, key: string): string {

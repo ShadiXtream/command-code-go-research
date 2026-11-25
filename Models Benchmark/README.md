@@ -20,9 +20,10 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 
 - **Inventory:** 62/62 Go models verified.
 - **Samples:** 7 files, protected as `status: sample` — Qwen 4 Max, Kimi K3.1 Pro, Tencent Hy4, GLM-5.3, Muse Ember, GPT-6 Luna, DeepSeek V4 Pro.
-- **Approvals:** P-0001 (data hygiene) approved; P-0002 (generator) approved with conditions.
+- **Model files:** 20 — 7 protected samples + 13 Batch A drafts.
+- **Approvals:** P-0001 (data hygiene) and P-0002 (generator) approved; the Batch A pilot is recorded in P-0003.
 - **P3.1 tooling:** complete — normalized schema, generator, validator, golden test.
-- **Batch:** 55 models queued for P3.2 data population.
+- **Batch A:** 13/55 drafts generated from the normalized CSV; 42 models queued.
 - **Phase 2:** not started; begins after the dataset is locked.
 
 ## Run the tools
@@ -34,6 +35,11 @@ npm test                 # golden samples + overwrite guard
 npm run validate:models  # structural validation
 npm run build:models     # writes queued/draft only; sample/approved/done are protected
 ```
+
+## Data helpers
+
+- `tools/livebench-categories.mjs` — recomputes the six LiveBench category scores from the official CSV using the project mapping verified against the seven samples.
+- `tools/extract-aa-model.mjs` — extracts the embedded AA model details from a saved AA model page. Best-effort: AA pages vary by variant, so review the extracted fields and flags.
 
 ## How to review the samples
 

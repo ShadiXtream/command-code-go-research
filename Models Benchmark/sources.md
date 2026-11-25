@@ -45,6 +45,7 @@
 
 - Scores are effort-dependent. Example: GPT-6 Luna scores 28 at `max`, 23 at `xhigh`, 21 at `high`, 18 at `medium` (its default), 10 at `low`, 9 non-reasoning. Always record the effort.
 - AA’s model page can list several configurations; the headline is not always the default.
+- **P3.2 coverage finding:** AA has no Intelligence Index for several current models, including DeepSeek V4.1 Flash (latest), DeepSeek V4 Flash 0731, Kimi K3 (Max), Kimi K2.7 Code, GLM-5.2, Qwen3.8 Max 0803, and Qwen3.7 Max. Use an evaluated variant only with an explicit `PROXY` flag; never substitute a low-effort variant for the headline.
 - AA’s intelligence index is a weighted composite, not a task-specific guarantee. Use it as an anchor, not a verdict.
 - AA pricing is the provider’s API price, which may differ from Command Code’s Go-page price.
 
@@ -99,6 +100,8 @@
 | Instruction Following | `theory_of_mind` |
 
 `AMPS_Hard` is **math** (agentic math problem solving), not agentic coding. Do not misclassify it.
+
+**Mapping verification (P3.2):** the table above reproduces the GLM-5.3 and DeepSeek V4 Pro sample category scores exactly. The only correction was DeepSeek V4 Pro math: the exact CSV average is 95.4483, which rounds to **95.4**, not 95.5. Note that LiveBench’s current `gen_ground_truth_judgment.py` routes some tasks differently (for example `theory_of_mind` → reasoning, `consecutive_events` → data_analysis, `integrals_with_game` → math). This project keeps the mapping above for comparability with the approved samples; if the sample mapping is revised, re-derive all rows together in P3.4.
 
 **What we use:** task-level scores, category averages derived from the official CSV, and the reported overall when a mirror publishes it.
 
@@ -221,6 +224,7 @@ Every known conflict is preserved here. Do not “fix” a conflict by choosing 
 | GPT-5.6 Luna | AA Intelligence Index | **24** (AA model page, v5.0.1, max) | 51.2% (BenchLM, “reported by OpenAI”) | Use **24**; vendor/report mismatch. |
 | GLM-5.3 | LiveBench overall | **76.1%** (BenchLM mirror) | ~78.7 derived 6-category mean from official CSV | Show 76.1 as reported overall; show derived category scores separately. |
 | DeepSeek V4 Pro | LiveBench overall | **71.6** (`deepseek-v4-pro-0813` row) | 77.4 (`deepseek-v4-pro` row) | Use 71.6 for the 0813 variant; flag the Command Code “latest” mapping as unconfirmed. |
+| DeepSeek V4 Pro | LiveBench math category | **95.4** (exact CSV average 95.4483) | 95.5 (earlier two-decimal rounding) | Use 95.4; corrected 2026-11-24 in the sample file and matrix. |
 | Qwen 4 Max | Context | **1M** (Command Code) | **984k** (AA) | Use 1M for Go planning; note AA’s measured window. |
 | GPT-6 Luna | Context | **1.05M / 1.1M** (Command Code pages) | **1M** (AA) | Use 1.05M for Go planning; note AA’s 1M. |
 | Terminal-Bench | Version | **4.1** official board | **4.0** AA run | Never mix; record version per row. |

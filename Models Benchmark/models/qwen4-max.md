@@ -40,7 +40,7 @@ default_effort: "xhigh"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $6 |
+| Go monthly allowance (shared $10 pool) | $6 |
 | Input $/1M | $1.50 |
 | Output $/1M | $4.50 |
 | Cache read $/1M | $0.075 |
@@ -51,6 +51,8 @@ default_effort: "xhigh"
 | Plan gate | Go |
 
 **Cost sanity check:** a typical request (800 fresh input + 50K cache read + 150 output) costs ≈ **$0.0056**, consistent with the Go page’s ≈$0.0058/request estimate at $6/1,030.
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 **Notes:** Standard $6 allowance. No deal. Cache writes are billed at $1.875/1M, unusual among Go models — long cached sessions still benefit, but the first write is not free.
 

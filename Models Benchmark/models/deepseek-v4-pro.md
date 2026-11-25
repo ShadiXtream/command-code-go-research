@@ -40,7 +40,7 @@ default_effort: "high"
 
 | Field | Value |
 |---|---:|
-| Go monthly credits | $6 |
+| Go monthly allowance (shared $10 pool) | $6 |
 | Input $/1M | $0.66 off-peak (peak $1.32) |
 | Output $/1M | $1.98 off-peak (peak $3.96) |
 | Cache read $/1M | $0.022 |
@@ -51,6 +51,8 @@ default_effort: "high"
 | Plan gate | Go |
 
 **Cost sanity check:** a typical off-peak request (800 fresh input + 50K cache read + 150 output) costs ≈ **$0.0019**, consistent with the Go page’s ≈$0.0020/request estimate at $6/2,960. Peak hours roughly double input/output.
+
+**Allowance note:** the Go plan is $1/month with a shared $10 usage pool ($3 per rolling 5 hours, $6 per rolling 7 days). The allowance above is this model’s share of that pool, not an extra charge.
 
 **Notes:** The off-peak price is excellent for a 1M-context model. Peak hours are 01:00–04:00 and 06:00–10:00 UTC, Monday–Friday; weekends are fully off-peak.
 
@@ -81,7 +83,7 @@ default_effort: "high"
 | LiveBench — overall (reported only) | 2026-06-25 | 71.6* | % | 0813 variant | BenchLM mirror | 2026-06-25 | value (reported overall) |
 | LiveBench — reasoning | 2026-06-25 | 88.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — coding | 2026-06-25 | 63.8 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
-| LiveBench — math | 2026-06-25 | 95.5 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — math | 2026-06-25 | 95.4 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — data analysis | 2026-06-25 | 70.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — language | 2026-06-25 | 75.5 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LiveBench — instruction following | 2026-06-25 | 84.6 | % | 0813 variant | LB CSV (derived) | 2026-06-25 | value (derived) |
@@ -147,3 +149,4 @@ No reliable vendor benchmark rows were extracted for V4 Pro. Vendor and third-pa
 | Date | Change | Reason |
 |---|---|---|
 | 2026-11-24 | Initial sample file | Human-review batch |
+| 2026-11-24 | Corrected LiveBench math from 95.5 to 95.4 | Exact CSV average of AMPS_Hard, math_comp, olympiad = 95.4483 |

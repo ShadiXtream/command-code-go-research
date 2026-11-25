@@ -333,34 +333,34 @@ This is the “quick sweep” result: which Go models to use for each task type 
 | P2.5 Self-check | **Done** | See each file’s provenance section |
 | **P2.6 Human review** | **Done (methodology)** | P-0001/P-0002 approved; sample files remain protected |
 | P3.1 Schema + generator/validator | **Done** | `model-benchmarks.csv`, `tools/build-models.ts`, `tools/validate-models.ts`, golden test |
-| P3.2 Populate normalized data | **Pending** | 55 models; CSV currently has 7 sample rows |
-| P3.3 Generate remaining files | **Blocked on P3.2** | `npm run build:models` writes only `queued`/`draft` |
+| P3.2 Populate normalized data | **In progress (13/55)** | Batch A drafts generated; 42 models queued |
+| P3.3 Generate remaining files | **In progress (13/55)** | 13 draft files written; 42 queued |
 | P3.4 Human spot-check | **Pending** | 10% + conflicts |
 | P3.5 Final QA + index | **Pending** | Coverage audit, dataset lock |
 | P4 Phase 2 | **Not started** | — |
 
 ### 9.2 62-model checklist
 
-Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBench 2026-06-25; `AR` = LMArena Text; `SWE` = SWE-bench Verified. `?` = not yet fetched. `—` = not published/not in snapshot. **Sample rows are verified to the file contract.** Queued rows contain preliminary single-source captures from the source boards and are **not** yet validated; they guide batching, not decisions, and will be re-fetched in P3.2.
+Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBench 2026-06-25; `AR` = LMArena Text; `SWE` = SWE-bench Verified. `?` = not yet fetched. `—` = not published/not in snapshot. **Sample rows are verified to the file contract.** Queued rows contain preliminary single-source captures from the source boards and are **not** yet validated; they guide batching, not decisions, and will be re-fetched in P3.2. `Draft` = a generated model file exists; the checklist values are the original preliminary captures, so the model file is authoritative.
 
 | # | Model (exact ID) | AA | TB | LB | AR | SWE | Status |
 |---:|---|---:|---:|---:|---:|---:|---|
-| 1 | `deepseek/deepseek-v4.1-flash` | ? | ? | ? | ? | ? | Queued |
-| 2 | `deepseek/deepseek-v4-flash` | ? | ? | ? | ? | ? | Queued |
-| 3 | `deepseek/deepseek-v4-flash-fast` | ? | ? | ? | ? | ? | Queued |
-| 4 | `deepseek/deepseek-v4.1-flash-fast` | ? | ? | ? | ? | ? | Queued |
+| 1 | `deepseek/deepseek-v4.1-flash` | ? | ? | ? | ? | ? | Draft |
+| 2 | `deepseek/deepseek-v4-flash` | ? | ? | ? | ? | ? | Draft |
+| 3 | `deepseek/deepseek-v4-flash-fast` | ? | ? | ? | ? | ? | Draft |
+| 4 | `deepseek/deepseek-v4.1-flash-fast` | ? | ? | ? | ? | ? | Draft |
 | 5 | `deepseek/deepseek-v4-pro` | 23 | 6.7 | 71.6* | 1,458 | — | **Sample** |
-| 6 | `deepseek/deepseek-v4-flash-vision-exp` | ? | ? | ? | ? | ? | Queued |
+| 6 | `deepseek/deepseek-v4-flash-vision-exp` | ? | ? | ? | ? | ? | Draft |
 | 7 | `moonshotai/Kimi-K3.1-Pro` | 46 | 59.7 | — | — | — | **Sample** |
-| 8 | `moonshotai/Kimi-K3` | ? | 23.0 | 79.2 | — | — | Queued |
-| 9 | `moonshotai/Kimi-K2.7-Code` | ? | — | 68.4 | — | — | Queued |
+| 8 | `moonshotai/Kimi-K3` | ? | 23.0 | 79.2 | — | — | Draft |
+| 9 | `moonshotai/Kimi-K2.7-Code` | ? | — | 68.4 | — | — | Draft |
 | 10 | `moonshotai/Kimi-K2.7-Code-Highspeed` | ? | — | — | — | — | Queued |
 | 11 | `moonshotai/Kimi-K2.6` | ? | — | 70.5 | — | — | Queued |
 | 12 | `moonshotai/Kimi-K2.5` | ? | — | — | — | 70.8 | Queued |
-| 13 | `z-ai/glm-5.3-flash` | ? | 37.0 | 71.6 | 1,476 | — | Queued |
+| 13 | `z-ai/glm-5.3-flash` | ? | 37.0 | 71.6 | 1,476 | — | Draft |
 | 14 | `z-ai/glm-5.3-flashx` | ? | — | — | — | — | Queued |
 | 15 | `zai-org/GLM-5.3` | 32 | 41.2 | 76.1* | — | — | **Sample** |
-| 16 | `zai-org/GLM-5.2` | ? | — | 73.2 | — | — | Queued |
+| 16 | `zai-org/GLM-5.2` | ? | — | 73.2 | — | — | Draft |
 | 17 | `zai-org/GLM-5.2-Fast` | ? | — | — | — | — | Queued |
 | 18 | `zai-org/GLM-5.1` | ? | — | — | — | — | Queued |
 | 19 | `zai-org/GLM-5` | ? | — | — | 1,230 | 72.8 | Queued |
@@ -370,18 +370,18 @@ Legend: `AA` = AA Intelligence Index; `TB` = Terminal-Bench 4.1; `LB` = LiveBenc
 | 23 | `MiniMaxAI/MiniMax-M2.5` | ? | — | — | — | 75.8 | Queued |
 | 24 | `Qwen/Qwen4-Max` | 43 | — | — | — | — | **Sample** |
 | 25 | `Qwen/Qwen3.8-Omni-Flash` | ? | — | — | — | — | Queued |
-| 26 | `Qwen/Qwen3.8-Max-0902` | ? | 27.0 | — | — | — | Queued |
-| 27 | `Qwen/Qwen3.8-Max` | ? | — | 78.5 | — | — | Queued |
+| 26 | `Qwen/Qwen3.8-Max-0902` | ? | 27.0 | — | — | — | Draft |
+| 27 | `Qwen/Qwen3.8-Max` | ? | — | 78.5 | — | — | Draft |
 | 28 | `Qwen/Qwen3.8-27B` | ? | — | 75.3 | — | — | Queued |
 | 29 | `Qwen/Qwen3.8-Flash` | ? | — | — | — | — | Queued |
-| 30 | `Qwen/Qwen3.7-Max` | ? | — | 73.1 | — | — | Queued |
+| 30 | `Qwen/Qwen3.7-Max` | ? | — | 73.1 | — | — | Draft |
 | 31 | `Qwen/Qwen3.7-Plus` | ? | — | — | — | — | Queued |
 | 32 | `Qwen/Qwen3.7-Flash` | ? | — | — | — | — | Queued |
 | 33 | `Qwen/Qwen3.6-Max-Preview` | ? | — | — | 1,468 | — | Queued |
 | 34 | `Qwen/Qwen3.6-Plus` | ? | — | 68.9 | — | — | Queued |
 | 35 | `tencent/hy3-paid` | ? | — | — | — | — | Queued |
 | 36 | `tencent/hy4` | 35 | 37.9 | — | — | — | **Sample** |
-| 37 | `tencent/hy4-flash` | ? | 11.8 | — | — | — | Queued |
+| 37 | `tencent/hy4-flash` | ? | 11.8 | — | — | — | Draft |
 | 38 | `tencent/hy4-preview` | ? | 19.1 | — | — | — | Queued |
 | 39 | `xiaomi/mimo-v2.6-pro` | ? | 27.0 | — | 1,481 | — | Queued |
 | 40 | `xiaomi/mimo-v2.6-flash` | ? | 16.1 | — | 1,448 | — | Queued |
