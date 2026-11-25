@@ -14,6 +14,7 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 | [`data/model-benchmarks.csv`](./data/model-benchmarks.csv) | Normalized 56-column schema; 62 rows (7 protected samples + 55 drafts) |
 | [`data/vendor_claims.csv`](./data/vendor_claims.csv) | Isolated vendor/third-party claims; never used in rankings |
 | [`review/P3.4-spot-check.md`](./review/P3.4-spot-check.md) | P3.4 sample, conflict inventory, and lock checklist |
+| [`phase2/taxonomy.md`](./phase2/taxonomy.md) | P4.1 task profiles, weights, filters, and confidence rules |
 | [`data/`](./data/) | Machine-readable snapshots: Go inventory, LiveBench CSV, SWE-bench CSV, Terminal-Bench Go rows, sample score matrix |
 | [`../tools/`](../tools/) | Strict TypeScript generator, validator, and golden test |
 
@@ -27,7 +28,8 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 - **P3.2/P3.3:** complete — 55/55 drafts generated; 0 queued.
 - **P3.4:** complete — 6 random drafts + 27 flagged rows; see `review/P3.4-spot-check.md`.
 - **P3.5:** complete — dataset locked in `data/dataset-lock.json` at SHA-256 `0ba9c2d…644b`.
-- **Phase 2:** not started; the dataset is locked and Phase 2 can begin.
+- **P4.1:** complete — 10 task profiles, core weights, budget modifier, and confidence rules in `phase2/taxonomy.md`.
+- **P4.2:** next — scoring spec and calculator.
 
 ## Run the tools
 
