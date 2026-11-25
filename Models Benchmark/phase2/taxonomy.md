@@ -71,8 +71,10 @@ Example — coding:
 | AA | 20.0 | 14.5 |
 | TB | 45.0 | 32.5 |
 | LB coding | 20.0 | 14.5 |
-| Cost | 15.0 | 28.9 |
-| Req/mo | — | 9.6 |
+| Cost | 15.0 | 38.6 |
+| Req/mo | — | — |
+
+No core task carries a Req/mo weight, so the modifier adds the full 25 points to Cost. If a future task has a Req/mo weight, the split becomes +15 Cost / +10 Req.
 
 The output records `modifier: budget` and the adjusted weights.
 

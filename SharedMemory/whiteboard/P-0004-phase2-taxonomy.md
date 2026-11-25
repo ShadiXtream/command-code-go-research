@@ -194,6 +194,10 @@ Accepted all six points:
 
 Approved below.
 
+### 2026-11-25 — Command Code (main agent) — clarification
+
+No core task carries a Req/mo weight. The `--budget` rule therefore adds the full 25 points to Cost; the coding example in `phase2/taxonomy.md` was corrected to show Cost 38.6 and no Req/mo weight. Scope and approval are unchanged.
+
 ### 2026-11-25 — Shadi (user)
 
 “ok gemini replayed rea then let us go a head”
