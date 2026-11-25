@@ -48,6 +48,7 @@
 - **P3.2 coverage finding:** AA has no Intelligence Index for several current models, including DeepSeek V4.1 Flash (latest), DeepSeek V4 Flash 0731, Kimi K3 (Max), Kimi K2.7 Code, GLM-5.2, Qwen3.8 Max 0803, and Qwen3.7 Max. Use an evaluated variant only with an explicit `PROXY` flag; never substitute a low-effort variant for the headline.
 - **P3.2 Batch B coverage:** AA indices are available for MiniMax M3.1 Flash, MiniMax M3, MiMo V2.6 Pro, MiMo V2.6 Flash, and Ling 3.1 Flash 1019; the other ten Batch B models have no current AA index.
 - **P3.2 Batch C coverage:** only Qwen3.8 27B has an AA index; Terminal-Bench has Grok 4.5; LiveBench has Kimi K2.6 (thinking variant) and a Kimi K2.7 Code proxy; SWE-bench has Kimi K2.5 and MiniMax M2.5; LMArena values for Qwen3.6 Max Preview and GLM-5 are preliminary checklist captures.
+- **P3.2 Batch D coverage:** AA indices for 10/15 (Step 5 Preview, Muse Spark 1.3, Muse Spark Open, Inkling 2 Mini, Inkling, Inkling Small, Nemotron 3 Ultra, Nemotron 3.5 Super VL, Mistral Large 4, GPT-5.6 Luna); Terminal-Bench 5/15; LiveBench 5/15; no SWE or Arena values. Hy3 and Muse Spark 1.2 have no AA index; Ornith, Flint, and Glyph have no AA page.
 - AA’s intelligence index is a weighted composite, not a task-specific guarantee. Use it as an anchor, not a verdict.
 - AA pricing is the provider’s API price, which may differ from Command Code’s Go-page price.
 
