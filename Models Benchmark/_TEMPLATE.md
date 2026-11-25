@@ -14,7 +14,7 @@ status: "sample"            # sample | approved | done | blocked
 aa_slug: "aa-model-slug"    # or null
 weights: "open"             # open | open-restricted | closed | stealth | unknown
 context: "1M"               # Command Code value, with AA value in notes if different
-reasoning: true
+reasoning: true               # true | false | unknown
 efforts: ["low", "medium", "high"]
 evaluated_effort: "max"     # effort used for the headline benchmark
 default_effort: "max"       # or "unknown"

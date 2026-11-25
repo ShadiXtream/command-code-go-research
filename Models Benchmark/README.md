@@ -11,8 +11,9 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 | [`_TEMPLATE.md`](./_TEMPLATE.md) | The exact schema every model file must follow |
 | [`../GOModels.md`](../GOModels.md) | The verified 62-model Go inventory (IDs, prices, credits) |
 | [`models/`](./models/) | One Markdown file per model |
-| [`data/model-benchmarks.csv`](./data/model-benchmarks.csv) | Normalized 56-column schema; currently the seven golden samples |
+| [`data/model-benchmarks.csv`](./data/model-benchmarks.csv) | Normalized 56-column schema; 62 rows (7 protected samples + 55 drafts) |
 | [`data/vendor_claims.csv`](./data/vendor_claims.csv) | Isolated vendor/third-party claims; never used in rankings |
+| [`review/P3.4-spot-check.md`](./review/P3.4-spot-check.md) | P3.4 sample, conflict inventory, and lock checklist |
 | [`data/`](./data/) | Machine-readable snapshots: Go inventory, LiveBench CSV, SWE-bench CSV, Terminal-Bench Go rows, sample score matrix |
 | [`../tools/`](../tools/) | Strict TypeScript generator, validator, and golden test |
 
@@ -23,7 +24,9 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 - **Model files:** 62 — 7 protected samples + 55 draft files.
 - **Approvals:** P-0001 (data hygiene) and P-0002 (generator) approved; the P3.2 batches are recorded in P-0003.
 - **P3.1 tooling:** complete — normalized schema, generator, validator, golden test.
-- **P3.2/P3.3:** complete — 55/55 drafts generated; 0 queued. Next is the P3.4 human spot-check.
+- **P3.2/P3.3:** complete — 55/55 drafts generated; 0 queued.
+- **P3.4:** review packet ready — 6 random drafts + 27 flagged rows.
+- **P3.5:** coverage audit and checklist index complete; dataset lock pending human sign-off.
 - **Phase 2:** not started; begins after the dataset is locked.
 
 ## Run the tools

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": "Models Benchmark/data/model-benchmarks.csv",
+  "snapshot_date": "2026-11-24",
+  "rows": 62,
+  "samples": 7,
+  "drafts": 55,
+  "columns": 56,
+  "sha256": "0ba9c2d26ed4ba4647945227ff6727b6579d12ac2d59ca0d3ef7a8f41c8e644b",
+  "status": "pending-signoff",
+  "locked_at": null,
+  "review": "Models Benchmark/review/P3.4-spot-check.md"
+}
