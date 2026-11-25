@@ -7,7 +7,8 @@
   "drafts": 55,
   "columns": 56,
   "sha256": "0ba9c2d26ed4ba4647945227ff6727b6579d12ac2d59ca0d3ef7a8f41c8e644b",
-  "status": "pending-signoff",
-  "locked_at": null,
+  "status": "locked",
+  "locked_at": "2026-11-25T00:34:38Z",
+  "approved_by": "Shadi (user)",
   "review": "Models Benchmark/review/P3.4-spot-check.md"
 }

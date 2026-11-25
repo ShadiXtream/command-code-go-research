@@ -335,8 +335,8 @@ This is the “quick sweep” result: which Go models to use for each task type 
 | P3.1 Schema + generator/validator | **Done** | `model-benchmarks.csv`, `tools/build-models.ts`, `tools/validate-models.ts`, golden test |
 | P3.2 Populate normalized data | **Done (55/55)** | All four batches populated; 62 rows total |
 | P3.3 Generate remaining files | **Done (55/55)** | 55 draft files written; 7 protected samples |
-| P3.4 Human spot-check | **Review ready** | 6 random + 27 flagged rows; see `review/P3.4-spot-check.md` |
-| P3.5 Final QA + index | **QA complete; lock pending sign-off** | 62/62 coverage, checklist reconciled, hash recorded |
+| P3.4 Human spot-check | **Done** | 6 random + 27 flagged rows; see `review/P3.4-spot-check.md` |
+| P3.5 Final QA + index | **Done (locked)** | 62/62 coverage, checklist reconciled, `data/dataset-lock.json` |
 | P4 Phase 2 | **Not started** | — |
 
 ### 9.2 62-model checklist

@@ -25,9 +25,9 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 - **Approvals:** P-0001 (data hygiene) and P-0002 (generator) approved; the P3.2 batches are recorded in P-0003.
 - **P3.1 tooling:** complete — normalized schema, generator, validator, golden test.
 - **P3.2/P3.3:** complete — 55/55 drafts generated; 0 queued.
-- **P3.4:** review packet ready — 6 random drafts + 27 flagged rows.
-- **P3.5:** coverage audit and checklist index complete; dataset lock pending human sign-off.
-- **Phase 2:** not started; begins after the dataset is locked.
+- **P3.4:** complete — 6 random drafts + 27 flagged rows; see `review/P3.4-spot-check.md`.
+- **P3.5:** complete — dataset locked in `data/dataset-lock.json` at SHA-256 `0ba9c2d…644b`.
+- **Phase 2:** not started; the dataset is locked and Phase 2 can begin.
 
 ## Run the tools
 
