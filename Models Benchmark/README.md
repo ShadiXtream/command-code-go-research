@@ -20,10 +20,10 @@ Standardized benchmark files for every model on the **Command Code Go plan**.
 
 - **Inventory:** 62/62 Go models verified.
 - **Samples:** 7 files, protected as `status: sample` — Qwen 4 Max, Kimi K3.1 Pro, Tencent Hy4, GLM-5.3, Muse Ember, GPT-6 Luna, DeepSeek V4 Pro.
-- **Model files:** 35 — 7 protected samples + 28 Batch A/B drafts.
+- **Model files:** 47 — 7 protected samples + 40 Batch A/B/C drafts.
 - **Approvals:** P-0001 (data hygiene) and P-0002 (generator) approved; the Batch A pilot is recorded in P-0003.
 - **P3.1 tooling:** complete — normalized schema, generator, validator, golden test.
-- **Batch A+B:** 28/55 drafts generated from the normalized CSV; 27 models queued.
+- **Batch A+B+C:** 40/55 drafts generated from the normalized CSV; 15 models queued.
 - **Phase 2:** not started; begins after the dataset is locked.
 
 ## Run the tools
