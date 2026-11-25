@@ -79,13 +79,13 @@ Use only benchmarks from `sources.md`. Keep raw units. Do not convert.
 |---|---|---|---:|---|---|---|---|
 | AA Intelligence Index | v5.0.1 | — | 0–100 | — | AA | 2026-11-24 | NE |
 | Terminal-Bench | 4.1 | — | % resolved | — | TB official | — | NE |
-| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
-| LiveBench — reasoning | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
-| LiveBench — coding | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
-| LiveBench — math | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
-| LiveBench — data analysis | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
-| LiveBench — language | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
-| LiveBench — instruction following | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NE |
+| LiveBench — overall (reported only) | 2026-06-25 | — | % | — | LB CSV | 2026-06-25 | NM |
+| LiveBench — reasoning | 2026-06-25 | 88.4 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — coding | 2026-06-25 | 67.9 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — math | 2026-06-25 | 94.7 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — data analysis | 2026-06-25 | 68.9 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — language | 2026-06-25 | 79.5 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
+| LiveBench — instruction following | 2026-06-25 | 78.8 | % | CSV variant | LB CSV (derived) | 2026-06-25 | value (derived) |
 | LMArena Text | 2026-11-22 | — | Elo | — | Arena | 2026-11-22 | NM |
 | SWE-bench Verified | 2026-11-24 | — | % resolved | — | SWE-bench | 2026-11-24 | NE |
 
@@ -100,11 +100,11 @@ into this file or use them in a cross-model ranking.
 | Capability | Evidence | Rating | Confidence |
 |---|---|---|---|
 | General reasoning | AA index — | TBD | TBD |
-| Coding | Terminal-Bench —; LiveBench coding — | TBD | TBD |
+| Coding | Terminal-Bench —; LiveBench coding 67.9 | TBD | TBD |
 | Agentic / tool use | Terminal-Bench; AA agentic evals | TBD | TBD |
 | Knowledge / factuality | AA index; AA-Omniscience (if available) | TBD | TBD |
 | Long context | 1M | TBD | TBD |
-| Instruction following | LiveBench IF — | TBD | TBD |
+| Instruction following | LiveBench IF 78.8 | TBD | TBD |
 | Multimodal | text | TBD | TBD |
 | Speed / latency | — min/task; —s TTFT; 56.3 tok/s | TBD | TBD |
 | Cost efficiency | $—/task; 458 req/mo | TBD | TBD |
@@ -134,7 +134,7 @@ into this file or use them in a cross-model ranking.
 | Arena | https://arena.ai/leaderboard/chat/text | 2026-11-24 | provenance |
 | SWE-bench | https://www.swebench.com/ | 2026-11-24 | provenance |
 
-**Data-quality flags:** AA index NE; LB NE; TB NE; modalities unverified; Arena NM; SWE NE
+**Data-quality flags:** AA index NE; LB exact; TB NE; modalities unverified; Arena NM; SWE NE
 
 ## 8. Changelog
 

@@ -7,7 +7,7 @@ status: "draft"
 aa_slug: ""
 weights: "open"
 context: "262K"
-reasoning: false
+reasoning: unknown
 efforts: ["unknown"]
 evaluated_effort: "unknown"
 default_effort: "unknown"

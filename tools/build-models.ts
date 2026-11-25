@@ -211,7 +211,9 @@ export function loadRecords(): ModelRecord[] {
 function frontMatter(record: ModelRecord): string {
   const b = record.bench;
   const efforts = splitList(field(b, "efforts")).map(quote).join(", ");
-  const reasoning = field(b, "reasoning").trim().toLowerCase() === "true";
+  const reasoning = field(b, "reasoning").trim().toLowerCase();
+  const reasoningValue =
+    reasoning === "true" || reasoning === "unknown" ? reasoning : "false";
   return [
     "---",
     `cc_id: ${quote(field(b, "cc_id"))}`,
@@ -222,7 +224,7 @@ function frontMatter(record: ModelRecord): string {
     `aa_slug: ${quote(field(b, "aa_slug"))}`,
     `weights: ${quote(field(b, "weights"))}`,
     `context: ${quote(field(b, "context"))}`,
-    `reasoning: ${reasoning ? "true" : "false"}`,
+    `reasoning: ${reasoningValue}`,
     `efforts: [${efforts}]`,
     `evaluated_effort: ${quote(field(b, "evaluated_effort"))}`,
     `default_effort: ${quote(field(b, "default_effort"))}`,
@@ -696,6 +698,28 @@ export function validateModelFiles(): string[] {
     }
     if (!front.status || !ALLOWED_STATUSES.has(front.status)) {
       errors.push(`${slug}: invalid or missing front matter status`);
+    }
+    if (!front.reasoning || !["true", "false", "unknown"].includes(front.reasoning)) {
+      errors.push(`${slug}: invalid front matter reasoning (${front.reasoning ?? ""})`);
+    }
+    for (const key of [
+      "status",
+      "aa_slug",
+      "weights",
+      "context",
+      "reasoning",
+      "evaluated_effort",
+      "default_effort",
+    ]) {
+      const expected =
+        key === "reasoning"
+          ? field(record.bench, key).trim().toLowerCase()
+          : field(record.bench, key);
+      if (front[key] !== expected) {
+        errors.push(
+          `${slug}: front matter ${key} does not match the CSV (${front[key]} vs ${expected})`,
+        );
+      }
     }
     if (!text.includes("## 4. Common benchmark table")) {
       errors.push(`${slug}: missing common benchmark table`);
