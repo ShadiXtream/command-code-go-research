@@ -206,4 +206,12 @@ Approved the revised P4.1 proposal. Implementation is limited to the taxonomy do
 
 ## Implementation
 
-In progress on `agent/commandcode/P-0004`.
+Implemented in commit `18c254a` on `agent/commandcode/P-0004`.
+
+Changed:
+- `Models Benchmark/phase2/taxonomy.md` — 10 task profiles, core weights, primary-metric penalty, `--budget` modifier, Proxy Only labels, hard floors, and confidence rules.
+- `Models Benchmark/plan.md` — P4.1 done; P4.2 next; Phase 2 section rewritten.
+- `Models Benchmark/README.md` — taxonomy linked; Phase 2 state updated.
+- `decisions.md` — D-0006.
+
+Verified: `npm run validate:models` and `npm run check:models` pass; 0 Markdown table/link issues; dataset lock and SHA-256 unchanged.
